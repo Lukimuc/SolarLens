@@ -27,6 +27,6 @@ public class BrightnessCalculator : MonoBehaviour
         angleText.text = "Angle: " + angle;
 
         // Now 'angle' contains the angle between the sunshine direction and the top plane normal of the second object
-        Debug.Log("Angle: " + angle);
+        //Debug.Log("Angle: " + angle);
     }
 }
