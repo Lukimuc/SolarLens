@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+    <Tracking>
+        <ImageTarget name="SolarCell.Top" size="10.400000 2.301708"/>
+        <ImageTarget name="SolarCell.Left" size="2.300000 8.396690"/>
+        <ImageTarget name="SolarCell.Bottom" size="10.400000 2.301708"/>
+        <ImageTarget name="SolarCell.Back" size="10.400000 8.402928"/>
+        <ImageTarget name="SolarCell.Right" size="2.300000 8.396690"/>
+        <ImageTarget name="SolarCell.Front" size="10.400000 8.402928"/>
+        <MultiTarget name="SolarCell">
+            <Part name="SolarCell.Left" translation="-5.199999809265137 0 0" rotation="AD: 0 1 0 -90"/>
+            <Part name="SolarCell.Right" translation="5.199999809265137 0 0" rotation="AD: 0 1 0 90"/>
+            <Part name="SolarCell.Front" translation="0 0 1.149999976158142" rotation="AD: 1 0 0 0"/>
+            <Part name="SolarCell.Back" translation="0 0 -1.149999976158142" rotation="AD: 0 1 0 180"/>
+            <Part name="SolarCell.Top" translation="0 4.199999809265137 0" rotation="AD: 1 0 0 -90"/>
+            <Part name="SolarCell.Bottom" translation="0 -4.199999809265137 0" rotation="AD: 1 0 0 90"/>
+        </MultiTarget>
+    </Tracking>
+</QCARConfig>
