@@ -38,7 +38,7 @@ public class electricityGenerationFormula : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(handsOnMode){
             float intensity = sliderValue;
@@ -50,11 +50,6 @@ public class electricityGenerationFormula : MonoBehaviour
             electricityValue = intensity * ((Mathf.Sin(angle)) / (Mathf.Pow(distance, 2)));
             eText.text = "Electricity: " + electricityValue;
         }
-
-
-
-
-        
     }
 
     public float calculateDistance(){
