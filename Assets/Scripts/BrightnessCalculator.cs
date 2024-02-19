@@ -24,7 +24,7 @@ public class BrightnessCalculator : MonoBehaviour
         // 3. Calculate the angle between the two vectors
         float angle = Vector3.Angle(sunshineDirection, topPlaneNormal);
 
-        angleText.text = "Angle: " + angle;
+        //angleText.text = "Angle: " + angle;
 
         // Now 'angle' contains the angle between the sunshine direction and the top plane normal of the second object
         //Debug.Log("Angle: " + angle);
