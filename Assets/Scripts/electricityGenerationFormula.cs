@@ -24,7 +24,7 @@ public class electricityGenerationFormula : MonoBehaviour
 
     private float angle = 90;
 
-    private float distance = 1;
+    private float distance = 0.1f;
 
     public TextMeshProUGUI angleText;
     public TextMeshProUGUI eText;
@@ -53,11 +53,11 @@ public class electricityGenerationFormula : MonoBehaviour
     }
 
     public float calculateDistance(){
-        float distance = 1;
+        float distance = 0.1f;
         if(sun != null && solarCell != null){
             distance =  Vector3.Distance (sun.transform.position, solarCell.transform.position);
             if(distance == 0){
-                distance = 1;
+                distance = 0.1f;
             }
         }
 
