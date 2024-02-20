@@ -47,10 +47,12 @@ public class SoundManager : MonoBehaviour
         {
             soundMuted = true;
             audioSource.mute = true;
+            audioSource.Pause();
         } else
         {
             soundMuted = false;
             audioSource.mute = false;
+            audioSource.Play();
         }
     }
 
@@ -69,9 +71,4 @@ public class SoundManager : MonoBehaviour
             Debug.LogError("Sound not found: " + soundName);
         }
     }
-}
-
-public enum sounds
-{
-    ca
 }
