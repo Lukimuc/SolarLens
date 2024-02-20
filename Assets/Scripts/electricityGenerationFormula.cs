@@ -7,7 +7,7 @@ using TMPro;
 
 public class electricityGenerationFormula : MonoBehaviour
 {
-
+    public static electricityGenerationFormula instance;
     // TODO!: check if you are in hands on mode, dont do anything in guide mode!
     public bool handsOnMode = true;
 
@@ -31,6 +31,21 @@ public class electricityGenerationFormula : MonoBehaviour
     public TextMeshProUGUI dText;
 
     public Slider brightnessSlider;
+
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {

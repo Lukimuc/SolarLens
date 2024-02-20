@@ -26,8 +26,8 @@ public class PositionController : MonoBehaviour
     void Update()
     {
         if(trackableBehaviour.TargetStatus.Status == Status.TRACKED){
-            Debug.Log("targetPos: " + trackedObject.transform.position);
-            Debug.Log("targetRot: " + trackedObject.transform.rotation);
+            //Debug.Log("targetPos: " + trackedObject.transform.position);
+            //Debug.Log("targetRot: " + trackedObject.transform.rotation);
             textPos.text = "Pos: " + trackedObject.transform.position;
             textRot.text = "Rot: " + trackedObject.transform.rotation;
         }

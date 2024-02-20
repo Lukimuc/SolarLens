@@ -89,6 +89,7 @@ public class GUIManager : MonoBehaviour
         handsOnCanvas.gameObject.SetActive(false);
         inGuidedView = false;
         inHandsOnMode = false;
+        Hue.instance.StopHueCoroutine();
     }
 
 
@@ -97,6 +98,7 @@ public class GUIManager : MonoBehaviour
         handsOnModeExplanationPart = false;
         handsOnTrackedIconsPanel.SetActive(true);
         handsOnExplanationPanel.SetActive(false);
+        Hue.instance.StartHueCoroutine();
     }
 
     public void changeToGuidedTourExplanationPart()
