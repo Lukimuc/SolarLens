@@ -24,6 +24,13 @@ public class ModelManager : MonoBehaviour
 
     public GameObject electrons;
 
+    public GameObject nLayerLabel;
+    public GameObject pLayerLabel;
+    public GameObject topContactLayerLabel;
+    public GameObject bottomContactLayerLabel;
+
+
+
 
 
     
@@ -48,17 +55,23 @@ public class ModelManager : MonoBehaviour
         pLayer.SetActive(true);
         contactLayerTop.SetActive(true);
         contactLayerBottom.SetActive(true);
-        //set Label invisible
-        setChildrenActive(nLayer.transform);
-        setChildrenActive(pLayer.transform);
-        setChildrenActive(contactLayerTop.transform);
-        setChildrenActive(contactLayerBottom.transform);
+        //set Label visible
+        nLayerLabel.SetActive(true);
+        pLayerLabel.SetActive(true);
+        topContactLayerLabel.SetActive(true);
+        bottomContactLayerLabel.SetActive(true);
     }
+
+
+
+
+
 
     // 2. Model Guide Mode
     public void setNLayerModelinGuideMode(){
         setAllModelsInvisible();
         nLayer.SetActive(true);
+        nLayerLabel.SetActive(true);
     }
 
     // 3. Model Guide Mode
@@ -72,6 +85,7 @@ public class ModelManager : MonoBehaviour
     public void setPLayerModelinGuideMode(){
         setAllModelsInvisible();
         pLayer.SetActive(true);
+        pLayerLabel.SetActive(true);
     }
 
     // 5. Model Guide Mode
@@ -79,6 +93,7 @@ public class ModelManager : MonoBehaviour
         setAllModelsInvisible();
         pLayer.SetActive(true);
         pAtomLayer.SetActive(true);
+        pLayerLabel.SetActive(true);
     }
 
     // 6. Model Guide Mode
@@ -86,6 +101,8 @@ public class ModelManager : MonoBehaviour
         setAllModelsInvisible();
         contactLayerTop.SetActive(true);
         contactLayerBottom.SetActive(true);
+        topContactLayerLabel.SetActive(true);
+        bottomContactLayerLabel.SetActive(true);
     }
 
     // 7. Model Guide Mode
@@ -93,6 +110,7 @@ public class ModelManager : MonoBehaviour
         setAllModelsInvisible();
         nLayer.SetActive(true);
         electrons.SetActive(true);
+        nLayerLabel.SetActive(true);
     }
 
     // 8. Model Guide Mode
@@ -100,6 +118,7 @@ public class ModelManager : MonoBehaviour
         setAllModelsInvisible();
         pLayer.SetActive(true);
         holes.SetActive(true);
+        pLayerLabel.SetActive(true);
     }
 
     // 1. Model Animation Mode
@@ -136,12 +155,6 @@ public class ModelManager : MonoBehaviour
         pLayer.SetActive(true);
         contactLayerTop.SetActive(true);
         contactLayerBottom.SetActive(true);
-        //set Label invisible
-        setChilderenDeactive(nLayer.transform);
-        setChilderenDeactive(pLayer.transform);
-        setChilderenDeactive(contactLayerTop.transform);
-        setChilderenDeactive(contactLayerBottom.transform);
-
     }
 
     //set Children of parent object Active
@@ -171,6 +184,10 @@ public class ModelManager : MonoBehaviour
         pAtomLayer.SetActive(false);
         holes.SetActive(false);
         electrons.SetActive(false);
+        nLayerLabel.SetActive(false);
+        pLayerLabel.SetActive(false);
+        topContactLayerLabel.SetActive(false);
+        bottomContactLayerLabel.SetActive(false);
     }
 
 
