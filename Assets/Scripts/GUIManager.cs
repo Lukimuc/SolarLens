@@ -111,7 +111,7 @@ public class GUIManager : MonoBehaviour
         if(SoundManager.instance.soundMuted)
         {
             guidedMuteImageField.GetComponent<UnityEngine.UI.Image>().sprite = unmuteSprite;
-            handsOnMuteImageField.GetComponent<UnityEngine.UI.Image>().sprite = muteSprite;
+            handsOnMuteImageField.GetComponent<UnityEngine.UI.Image>().sprite = unmuteSprite;
         } else
         {
             guidedMuteImageField.GetComponent<UnityEngine.UI.Image>().sprite = muteSprite;
