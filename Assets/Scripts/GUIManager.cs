@@ -10,6 +10,7 @@ public class GUIManager : MonoBehaviour
 {
     public static GUIManager instance;
 
+    [SerializeField] private List<String> titles = new List<String>();
     [SerializeField] private List<String> texts = new List<String>();
     [SerializeField] private Canvas homeScreen;
     [SerializeField] private Canvas guidedTourCanvas;
