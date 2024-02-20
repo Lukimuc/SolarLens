@@ -89,6 +89,6 @@ public class electricityGenerationFormula : MonoBehaviour
 
     public void ValueChangeCheck()
 	{
-		//sliderValue = brightnessSlider.value;
+		sliderValue = brightnessSlider.value;
 	}
 }
