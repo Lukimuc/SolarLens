@@ -1,11 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class GUIManager : MonoBehaviour
 {
+    public static GUIManager instance;
+
     [SerializeField] private List<String> texts = new List<String>();
     [SerializeField] private Canvas homeScreen;
     [SerializeField] private Canvas guidedTourCanvas;
@@ -19,11 +22,24 @@ public class GUIManager : MonoBehaviour
 
     private int textCounter = 0;
     private bool inGuidedView = false;
-    private bool inHandsOnMode = false;
+    public bool inHandsOnMode = false;
 
-    private bool handsOnModeExplanationPart = true;
+    public bool handsOnModeExplanationPart = true;
     private bool guidedTourIntroductionPart = true;
 
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
