@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class GUIManager : MonoBehaviour
@@ -16,9 +17,13 @@ public class GUIManager : MonoBehaviour
 
     [SerializeField] private GameObject handsOnTrackedIconsPanel;
     [SerializeField] private GameObject handsOnExplanationPanel;
+    [SerializeField] private GameObject guidedMuteImageField;
+    [SerializeField] private GameObject handsOnMuteImageField;
 
     [SerializeField] private GameObject guidedIntroductionPanel;
     [SerializeField] private GameObject guidedExplanationPanel;
+    [SerializeField] private Sprite muteSprite;
+    [SerializeField] private Sprite unmuteSprite;
 
     private int textCounter = 0;
     private bool inGuidedView = false;
@@ -98,5 +103,19 @@ public class GUIManager : MonoBehaviour
         guidedTourIntroductionPart = false;
         guidedExplanationPanel.SetActive(true);
         guidedIntroductionPanel.SetActive(false);
+    }
+
+    public void changeMuteImage()
+    {
+        //Checks whether sound is muted. Checks after Sound should have been muted successfully.
+        if(SoundManager.instance.soundMuted)
+        {
+            guidedMuteImageField.GetComponent<UnityEngine.UI.Image>().sprite = unmuteSprite;
+            handsOnMuteImageField.GetComponent<UnityEngine.UI.Image>().sprite = muteSprite;
+        } else
+        {
+            guidedMuteImageField.GetComponent<UnityEngine.UI.Image>().sprite = muteSprite;
+            handsOnMuteImageField.GetComponent<UnityEngine.UI.Image>().sprite = muteSprite;
+        }
     }
 }

@@ -7,7 +7,7 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
 
-    [SerializeField] private AudioSource m_AudioSource;
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private List<AudioClip> audioClips;
 
     private Dictionary<string, AudioClip> soundDictionary;
@@ -43,17 +43,31 @@ public class SoundManager : MonoBehaviour
 
     public void muteSound()
     {
-        soundMuted = true;
+        if(!soundMuted)
+        {
+            soundMuted = true;
+            audioSource.mute = true;
+        } else
+        {
+            soundMuted = false;
+            audioSource.mute = false;
+        }
     }
 
-    public void unmuteSound()
-    {
-        soundMuted = false;
-    }
 
-    public void playSound()
+    // The generation of this method was helped by Microsoft Copilot
+    public void playSound(string soundName)
     {
-
+        audioSource.Stop();
+        if (soundDictionary.ContainsKey(soundName))
+        {
+            audioSource.clip = soundDictionary[soundName];
+            audioSource.Play();
+        }
+        else
+        {
+            Debug.LogError("Sound not found: " + soundName);
+        }
     }
 }
 
