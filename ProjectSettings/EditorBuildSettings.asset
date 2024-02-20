@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/LukasScene.unity
     guid: 78a241f65cee248709be39955ecd2f36
-  - enabled: 0
+  - enabled: 1
     path: Assets/MainScene.unity
     guid: 38e859eecff2d5642aa1d047ca8258e0
-  - enabled: 1
+  - enabled: 0
     path: Assets/ChristinaScene.unity
     guid: 5cfc90fb015bf87499a69819adb41fb1
   - enabled: 0

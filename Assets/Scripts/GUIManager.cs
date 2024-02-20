@@ -119,8 +119,8 @@ public class GUIManager : MonoBehaviour
     public void changeToGuidedTourExplanationPart()
     {
         guidedTourIntroductionPart = false;
-        guidedExplanationPanel.SetActive(true);
         guidedIntroductionPanel.SetActive(false);
+        guidedExplanationPanel.SetActive(true);
         guidedFinishPanel.SetActive(false);
         if (guidedTourCounter == 0)
         {
