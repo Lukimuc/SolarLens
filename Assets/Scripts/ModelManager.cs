@@ -39,7 +39,7 @@ public class ModelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //setAllModelsInvisible();
+        setAllModelsInvisible();
     }
 
     // Update is called once per frame

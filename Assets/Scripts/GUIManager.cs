@@ -158,7 +158,7 @@ public class GUIManager : MonoBehaviour
         {
             prevBtn.interactable = false;
         }
-        else if (guidedTourCounter == (titles.Count - 1))
+        else if (guidedTourCounter == (titles.Count))
         {
             //nextBtn.interactable = false;
             // Activate new UI
@@ -179,7 +179,47 @@ public class GUIManager : MonoBehaviour
 
         switch(guidedTourCounter)
         {
-            case 0:
+            case 1:
+                modelManager.setFirstModelinGuideMode();
+                break;
+            case 3:
+                modelManager.setNLayerModelinGuideMode();
+                break;
+            case 4:
+                modelManager.setNAtomLayerModelinGuideMode();
+                break;
+            case 5:
+                modelManager.setPLayerModelinGuideMode();
+                break;
+            case 6:
+                modelManager.setPAtomLayerModelinGuideMode();
+                break;
+            case 7:
+                modelManager.setContactLayerModelinGuideMode();
+                break;
+            case 10:
+                modelManager.setAllModelsInvisible();
+                break;
+            case 12:
+                modelManager.setElectronLayerModelinGuideMode();
+                break;
+            case 14:
+                modelManager.setHolesLayerModelinGuideMode();
+                break;
+            case 16:
+                modelManager.setAnimationMode();
+                break;
+            case 17:
+                modelManager.setSunRayAnimationMode();
+                break;
+            case 20:
+                modelManager.setContactlayerAnimationMode();
+                break;
+            case 21:
+                modelManager.setApplianceAnimationMode();
+                break;
+            case 22:
+                modelManager.setAllModelsInvisible();
                 break;
             default: 
                 break;
