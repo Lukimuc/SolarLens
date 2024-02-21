@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/LukasScene.unity
     guid: 78a241f65cee248709be39955ecd2f36
-  - enabled: 1
+  - enabled: 0
     path: Assets/MainScene.unity
     guid: 38e859eecff2d5642aa1d047ca8258e0
   - enabled: 0
@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Lukas_Scene_2.unity
     guid: 72ad568ed1ba14bd1a3ef48e69665063
+  - enabled: 1
+    path: Assets/Lukas_Scene_4.unity
+    guid: cdeb8a9f44dd6442298e5b77511af0e0
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}
