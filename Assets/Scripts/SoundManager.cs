@@ -68,7 +68,7 @@ public class SoundManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Sound not found: " + soundName);
+            Debug.Log("Sound not found: " + soundName);
         }
     }
 }
