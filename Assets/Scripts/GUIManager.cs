@@ -22,15 +22,21 @@ public class GUIManager : MonoBehaviour
     [SerializeField] private Canvas guidedTourCanvas;
     [SerializeField] private Canvas handsOnCanvas;
 
-    [SerializeField] private GameObject handsOnTrackedIconsPanel;
+    [SerializeField] private GameObject handsOnTrackedIconsPanelTop;
+    [SerializeField] private UnityEngine.UI.Button handsOnTrackedNextButton;
+    [SerializeField] private GameObject handsOnAngleDistancePanel;
     [SerializeField] private GameObject handsOnIntroPanel1;
     [SerializeField] private GameObject handsOnIntroPanel2;
     [SerializeField] private GameObject handsOnIntroPanel3;
+    [SerializeField] private GameObject handsOnIntroDetailPanel1;
+    [SerializeField] private GameObject handsOnIntroDetailPanel2;
+    [SerializeField] private GameObject handsOnIntroDetailPanel3;
     [SerializeField] private GameObject guidedMuteImageField;
     [SerializeField] private GameObject handsOnMuteImageField;
 
     [SerializeField] private GameObject guidedIntroductionPanel;
     [SerializeField] private GameObject guidedExplanationPanel;
+    [SerializeField] private GameObject guidedQRCode;
     [SerializeField] private GameObject guidedFinishPanel;
     [SerializeField] private Sprite muteSprite;
     [SerializeField] private Sprite unmuteSprite;
@@ -38,6 +44,7 @@ public class GUIManager : MonoBehaviour
     private int guidedTourCounter = -1;
     private bool inGuidedView = false;
     public bool inHandsOnMode = false;
+    private bool handsOnNextButtonActivated = false;
 
     public bool handsOnModeIntroPart = true;
     private bool guidedTourIntroductionPart = true;
@@ -74,6 +81,7 @@ public class GUIManager : MonoBehaviour
         homeScreen.gameObject.SetActive(false);
         handsOnCanvas.gameObject.SetActive(false);
         guidedTourCanvas.gameObject.SetActive(true);
+        guidedQRCode.SetActive(false);
         inGuidedView = true;
         if(guidedTourIntroductionPart)
         {
@@ -88,13 +96,20 @@ public class GUIManager : MonoBehaviour
         homeScreen.gameObject.SetActive(false);
         guidedTourCanvas.gameObject.SetActive(false);
         handsOnCanvas.gameObject.SetActive(true);
+        // Checking whether the next button can be pressed
+        if(handsOnNextButtonActivated)
+        {
+            handsOnTrackedNextButton.interactable = true;
+        } else
+        {
+            handsOnTrackedNextButton.interactable= false;
+        }
+
+        disableAllHandsOnIntroUIs();
         inHandsOnMode = true;
         if(handsOnModeIntroPart)
         {
-            handsOnTrackedIconsPanel.SetActive(false);
-            handsOnIntroPanel1.SetActive(true);
-            handsOnIntroPanel2.SetActive(false);
-            handsOnIntroPanel3.SetActive(false);
+            showHandsOnIntro();
         }
         modelManager.setModelsHandsOnMode();
     }
@@ -108,40 +123,64 @@ public class GUIManager : MonoBehaviour
         handsOnCanvas.gameObject.SetActive(false);
         inGuidedView = false;
         inHandsOnMode = false;
-        handsOnModeIntroPart = true;
         guidedTourIntroductionPart = true;
         Hue.instance.StopHueCoroutine();
         guidedTourCounter = -1;
     }
 
+    public void showHandsOnIntro()
+    {
+        Hue.instance.StopHueCoroutine();
+        handsOnAngleDistancePanel.SetActive(false);
+        handsOnTrackedIconsPanelTop.SetActive(false);
+        disableAllHandsOnIntroUIs();
+        handsOnIntroPanel1.SetActive(true);
+    }
 
     public void increaseHandsOnIntroPart()
     {
         if(handsOnIntroPanel1.activeSelf)
         {
-            handsOnIntroPanel1.SetActive(false);
+            disableAllHandsOnIntroUIs();
             handsOnIntroPanel2.SetActive(true);
-            handsOnIntroPanel3.SetActive(false);
         } else if (handsOnIntroPanel2.activeSelf)
         {
-            handsOnIntroPanel1.SetActive(false);
-            handsOnIntroPanel2.SetActive(false);
+            disableAllHandsOnIntroUIs();
             handsOnIntroPanel3.SetActive(true);
         }
     }
 
-    public void increaseHandsonIntroDetailPart()
+    public void increaseHandsOnIntroDetailPart()
     {
-        // TODO: Implement
+        Debug.Log("Showing handsOn Intro Detail");
+        Hue.instance.StopHueCoroutine();
+        if (handsOnIntroDetailPanel1.activeSelf)
+        {
+
+            Debug.Log("First");
+            disableAllHandsOnIntroUIs();
+            handsOnIntroDetailPanel2.SetActive(true);
+        } else if(handsOnIntroDetailPanel2.activeSelf)
+        {
+
+            Debug.Log("Second");
+            disableAllHandsOnIntroUIs();
+            handsOnIntroDetailPanel3.SetActive(true);
+        } else
+        {
+
+            Debug.Log("Third");
+            disableAllHandsOnIntroUIs();
+            handsOnIntroDetailPanel1.SetActive(true);
+        }
     }
 
     public void changeToHandsOnModeHandsOnPart()
     {
         handsOnModeIntroPart = false;
-        handsOnTrackedIconsPanel.SetActive(true);
-        handsOnIntroPanel1.SetActive(false);
-        handsOnIntroPanel2.SetActive(false);
-        handsOnIntroPanel3.SetActive(false);
+        handsOnTrackedIconsPanelTop.SetActive(true);
+        handsOnAngleDistancePanel.SetActive(true);
+        disableAllHandsOnIntroUIs();
         Hue.instance.StartHueCoroutine();
     }
 
@@ -168,6 +207,12 @@ public class GUIManager : MonoBehaviour
         }
     }
 
+    public void handsOnEnableNextButtonAfterTracked()
+    {
+        //handsOnTrackedNextButton.GetComponent<UnityEngine.UI.Image>().sprite = unmuteSprite;
+        handsOnTrackedNextButton.interactable = true;
+    }
+
     public void guidedTourChange(bool increase)
     {
         //Debug.Log(guidedTourCounter);
@@ -187,8 +232,8 @@ public class GUIManager : MonoBehaviour
         }
         else if (guidedTourCounter == (titles.Count))
         {
-            //nextBtn.interactable = false;
             // Activate new UI
+            Hue.instance.changeBrightness(0);
             guidedTourIntroductionPart = false;
             guidedExplanationPanel.SetActive(false);
             guidedIntroductionPanel.SetActive(false);
@@ -210,10 +255,12 @@ public class GUIManager : MonoBehaviour
         switch(guidedTourCounter)
         {
             case 0:
+                guidedQRCode.SetActive(true);
                 modelManager.setAllModelsInvisible();
                 modelManager.setFirstModelinGuideMode();
                 break;
             case 1:
+                guidedQRCode.SetActive(false);
                 modelManager.setAllModelsInvisible();
                 modelManager.setFirstModelinGuideMode();
                 break;
@@ -292,6 +339,7 @@ public class GUIManager : MonoBehaviour
                 modelManager.setAnimationModeWithContacts();
                 break;
             case 20:
+                Hue.instance.changeBrightness(200);
                 modelManager.setAllModelsInvisible();
                 // new wire for house
                 modelManager.setApplianceAnimationMode();
@@ -303,5 +351,15 @@ public class GUIManager : MonoBehaviour
             default: 
                 break;
         }
+    }
+
+    private void disableAllHandsOnIntroUIs()
+    {
+        handsOnIntroPanel1.SetActive(false);
+        handsOnIntroPanel2.SetActive(false);
+        handsOnIntroPanel3.SetActive(false);
+        handsOnIntroDetailPanel1.SetActive(false);
+        handsOnIntroDetailPanel2.SetActive(false);
+        handsOnIntroDetailPanel3.SetActive(false);
     }
 }

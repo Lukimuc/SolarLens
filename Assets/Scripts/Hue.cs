@@ -38,15 +38,8 @@ public class Hue : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("get Hue Bridge: ");
-        Debug.Log(HttpGet(getLightsURL));
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            changeBrightness(200);
-        }
+        //Debug.Log("get Hue Bridge: ");
+        //Debug.Log(HttpGet(getLightsURL));
     }
 
 
@@ -107,7 +100,7 @@ public class Hue : MonoBehaviour
         {
             //Debug.Log("Electricity: " + electricityGenerationFormula.instance.electricityValue);
             updateHueLight(electricityGenerationFormula.instance.electricityValue);
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(2f);
         }
     }
 
