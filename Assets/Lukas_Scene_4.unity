@@ -1486,7 +1486,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7b6badb70cbc9784eac182059027453c,
         type: 3}
       propertyPath: m_Name
-      value: BorFBX (3)
+      value: BorFBX_7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1940,7 +1940,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7b6badb70cbc9784eac182059027453c,
         type: 3}
       propertyPath: m_Name
-      value: BorFBX (5)
+      value: BorFBX_3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6666,7 +6666,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7b6badb70cbc9784eac182059027453c,
         type: 3}
       propertyPath: m_Name
-      value: BorFBX (6)
+      value: BorFBX_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7291,6 +7291,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c5263ff3b780d141839424b08f40603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sunSphere: {fileID: 0}
+  sunray: {fileID: 0}
+  nLayer: {fileID: 0}
+  pLayer: {fileID: 0}
+  contactLayerTop: {fileID: 0}
+  contactLayerBottom: {fileID: 0}
+  appliance: {fileID: 0}
+  nAtomlayer: {fileID: 0}
+  pAtomLayer: {fileID: 0}
+  holes: {fileID: 0}
+  electrons: {fileID: 0}
+  nLayerLabel: {fileID: 0}
+  pLayerLabel: {fileID: 0}
+  topContactLayerLabel: {fileID: 0}
+  bottomContactLayerLabel: {fileID: 0}
 --- !u!1 &654668934
 GameObject:
   m_ObjectHideFlags: 0
@@ -8407,7 +8422,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7b6badb70cbc9784eac182059027453c,
         type: 3}
       propertyPath: m_Name
-      value: BorFBX (8)
+      value: BorFBX_6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8590,7 +8605,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7b6badb70cbc9784eac182059027453c,
         type: 3}
       propertyPath: m_Name
-      value: BorFBX (7)
+      value: BorFBX_4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12511,7 +12526,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7b6badb70cbc9784eac182059027453c,
         type: 3}
       propertyPath: m_Name
-      value: BorFBX (2)
+      value: BorFBX_9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13352,7 +13367,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7b6badb70cbc9784eac182059027453c,
         type: 3}
       propertyPath: m_Name
-      value: BorFBX_7
+      value: BorFBX_8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13446,7 +13461,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7b6badb70cbc9784eac182059027453c,
         type: 3}
       propertyPath: m_Name
-      value: BorFBX (4)
+      value: BorFBX_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15015,7 +15030,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7b6badb70cbc9784eac182059027453c,
         type: 3}
       propertyPath: m_Name
-      value: BorFBX
+      value: BorFBX_5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
