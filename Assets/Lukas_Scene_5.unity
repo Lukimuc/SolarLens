@@ -1374,8 +1374,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   solarTrackedSprite: {fileID: 21300000, guid: 78c8111bd7a194784ab99ea09bb8263d, type: 3}
   sunTrackedSprite: {fileID: 21300000, guid: 1d97e0e1a4b2342ea811a2e4e6e3a337, type: 3}
-  solarTrackedImageField: {fileID: 0}
-  sunTrackedImageField: {fileID: 0}
+  solarTrackedImageFieldTop: {fileID: 0}
+  solarTrackedImageFieldMid: {fileID: 0}
+  sunTrackedImageFieldTop: {fileID: 0}
+  sunTrackedImageFieldMid: {fileID: 0}
 --- !u!4 &99344293
 Transform:
   m_ObjectHideFlags: 0
@@ -7737,14 +7739,20 @@ MonoBehaviour:
   homeScreen: {fileID: 1523667276}
   guidedTourCanvas: {fileID: 1868484934}
   handsOnCanvas: {fileID: 742247188}
-  handsOnTrackedIconsPanel: {fileID: 698257054}
+  handsOnTrackedIconsPanelTop: {fileID: 0}
+  handsOnTrackedNextButton: {fileID: 0}
+  handsOnAngleDistancePanel: {fileID: 0}
   handsOnIntroPanel1: {fileID: 0}
   handsOnIntroPanel2: {fileID: 0}
   handsOnIntroPanel3: {fileID: 0}
+  handsOnIntroDetailPanel1: {fileID: 0}
+  handsOnIntroDetailPanel2: {fileID: 0}
+  handsOnIntroDetailPanel3: {fileID: 0}
   guidedMuteImageField: {fileID: 497351228}
   handsOnMuteImageField: {fileID: 1129237925}
   guidedIntroductionPanel: {fileID: 736112655}
   guidedExplanationPanel: {fileID: 113091851}
+  guidedQRCode: {fileID: 0}
   guidedFinishPanel: {fileID: 1516621921}
   muteSprite: {fileID: 21300000, guid: 986b5395f04ba429cae1b2b39b5c2404, type: 3}
   unmuteSprite: {fileID: 21300000, guid: 5bcc222b4db115c4d959a68658c2d825, type: 3}
@@ -9990,6 +9998,131 @@ Transform:
   - {fileID: 983027055}
   m_Father: {fileID: 409585174}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &902589572
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1381499065}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: acdadde81acd15e4e8ab95a812a51ff5,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acdadde81acd15e4e8ab95a812a51ff5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acdadde81acd15e4e8ab95a812a51ff5,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acdadde81acd15e4e8ab95a812a51ff5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.27
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acdadde81acd15e4e8ab95a812a51ff5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.81
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acdadde81acd15e4e8ab95a812a51ff5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acdadde81acd15e4e8ab95a812a51ff5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acdadde81acd15e4e8ab95a812a51ff5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acdadde81acd15e4e8ab95a812a51ff5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acdadde81acd15e4e8ab95a812a51ff5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acdadde81acd15e4e8ab95a812a51ff5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acdadde81acd15e4e8ab95a812a51ff5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: acdadde81acd15e4e8ab95a812a51ff5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: acdadde81acd15e4e8ab95a812a51ff5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 027c8f274db6d2c478dc00cca4cf4400, type: 2}
+    - target: {fileID: 919132149155446097, guid: acdadde81acd15e4e8ab95a812a51ff5,
+        type: 3}
+      propertyPath: m_Name
+      value: animation_sunray (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: acdadde81acd15e4e8ab95a812a51ff5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: acdadde81acd15e4e8ab95a812a51ff5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 902589575}
+  m_SourcePrefab: {fileID: 100100000, guid: acdadde81acd15e4e8ab95a812a51ff5, type: 3}
+--- !u!4 &902589573 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: acdadde81acd15e4e8ab95a812a51ff5,
+    type: 3}
+  m_PrefabInstance: {fileID: 902589572}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &902589574 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: acdadde81acd15e4e8ab95a812a51ff5,
+    type: 3}
+  m_PrefabInstance: {fileID: 902589572}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &902589575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902589574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 061b3bf8ab7a84a4ca466ceb1a21766b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handsOnMode: 1
+  sun: {fileID: 524080328}
+  solarCell: {fileID: 1001264896}
+  originalLength: 1
 --- !u!1 &910118730
 GameObject:
   m_ObjectHideFlags: 0
@@ -14831,6 +14964,7 @@ Transform:
   - {fileID: 847488602}
   - {fileID: 1971279353}
   - {fileID: 1993739520}
+  - {fileID: 902589573}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1381499066
