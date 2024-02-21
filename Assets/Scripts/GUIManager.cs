@@ -251,7 +251,7 @@ public class GUIManager : MonoBehaviour
             case 17:
                 modelManager.setAllModelsInvisible();
                 //PNJunction
-                modelManager.setAnimationMode();
+                modelManager.setJunctionLayer();
                 break;
             case 18:
                 modelManager.setAllModelsInvisible();

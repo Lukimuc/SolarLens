@@ -29,6 +29,9 @@ public class ModelManager : MonoBehaviour
     public GameObject topContactLayerLabel;
     public GameObject bottomContactLayerLabel;
 
+    public GameObject npLayer;
+    public GameObject npLayerLabel;
+
 
 
 
@@ -140,6 +143,14 @@ public class ModelManager : MonoBehaviour
         contactLayerBottom.SetActive(true);
     }
 
+    public void setJunctionLayer(){
+        //setAllModelsInvisible();
+        npLayer.SetActive(true);
+        npLayerLabel.SetActive(true);
+        electrons.SetActive(true);
+        holes.SetActive(true);
+    }
+
     //2. Model SunRay Animation mode
     public void setSunRayAnimationMode(){
         //Wir haben noch keinen Sonnenstrahl für die Animation
@@ -208,6 +219,8 @@ public class ModelManager : MonoBehaviour
         pLayerLabel.SetActive(false);
         topContactLayerLabel.SetActive(false);
         bottomContactLayerLabel.SetActive(false);
+        npLayer.SetActive(false);
+        npLayerLabel.SetActive(false);
     }
 
 
