@@ -177,6 +177,9 @@ public class GUIManager : MonoBehaviour
 
         title.text = titles[guidedTourCounter];
         text.text = texts[guidedTourCounter];
+        string audioFileIndex = guidedTourCounter.ToString();
+        string audioFileName = "Guided" + audioFileIndex;
+        SoundManager.instance.playSound(audioFileName);
 
         switch(guidedTourCounter)
         {
