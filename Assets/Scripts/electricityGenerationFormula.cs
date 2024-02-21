@@ -16,6 +16,8 @@ public class electricityGenerationFormula : MonoBehaviour
     public Transform sun; 
     public Transform solarCell; 
 
+    public Transform cloud;
+
 
 
 
@@ -110,5 +112,27 @@ public class electricityGenerationFormula : MonoBehaviour
     public void ValueChangeCheck()
 	{
 		sliderValue = brightnessSlider.value;
+
+
+        float newAlpha = 255 - (255 * (sliderValue/100));
+        if(cloud != null){
+            foreach(Transform child in cloud){
+                if (child.gameObject.GetComponent<Renderer>() != null){
+                    // Access the material of the object
+                    Material mat = GetComponent<Renderer>().material;
+
+                    // Get the current color of the material
+                    Color currentColor = mat.color;
+
+                    // Change the alpha value of the current color
+                    currentColor.a = newAlpha;
+
+                    // Assign the new color back to the material
+                    mat.color = currentColor;
+                }
+        }
+            
+
+        }
 	}
 }

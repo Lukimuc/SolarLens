@@ -32,6 +32,7 @@ public class ModelManager : MonoBehaviour
     public GameObject npLayer;
     public GameObject npLayerLabel;
 
+    public GameObject cloud;
 
 
 
@@ -182,6 +183,7 @@ public class ModelManager : MonoBehaviour
         //setAllModelsInvisible();
         sunSphere.SetActive(true);
         sunray.SetActive(true);
+        cloud.SetActive(true);
         nLayer.SetActive(true);
         pLayer.SetActive(true);
         contactLayerTop.SetActive(true);
@@ -221,6 +223,7 @@ public class ModelManager : MonoBehaviour
         bottomContactLayerLabel.SetActive(false);
         npLayer.SetActive(false);
         npLayerLabel.SetActive(false);
+        cloud.SetActive(false);
     }
 
 
