@@ -23,7 +23,9 @@ public class GUIManager : MonoBehaviour
     [SerializeField] private Canvas handsOnCanvas;
 
     [SerializeField] private GameObject handsOnTrackedIconsPanel;
-    [SerializeField] private GameObject handsOnExplanationPanel;
+    [SerializeField] private GameObject handsOnIntroPanel1;
+    [SerializeField] private GameObject handsOnIntroPanel2;
+    [SerializeField] private GameObject handsOnIntroPanel3;
     [SerializeField] private GameObject guidedMuteImageField;
     [SerializeField] private GameObject handsOnMuteImageField;
 
@@ -37,7 +39,7 @@ public class GUIManager : MonoBehaviour
     private bool inGuidedView = false;
     public bool inHandsOnMode = false;
 
-    public bool handsOnModeExplanationPart = true;
+    public bool handsOnModeIntroPart = true;
     private bool guidedTourIntroductionPart = true;
 
     public ModelManager modelManager;
@@ -87,10 +89,12 @@ public class GUIManager : MonoBehaviour
         guidedTourCanvas.gameObject.SetActive(false);
         handsOnCanvas.gameObject.SetActive(true);
         inHandsOnMode = true;
-        if(handsOnModeExplanationPart)
+        if(handsOnModeIntroPart)
         {
             handsOnTrackedIconsPanel.SetActive(false);
-            handsOnExplanationPanel.SetActive(true);
+            handsOnIntroPanel1.SetActive(true);
+            handsOnIntroPanel2.SetActive(false);
+            handsOnIntroPanel3.SetActive(false);
         }
         modelManager.setModelsHandsOnMode();
     }
@@ -104,18 +108,40 @@ public class GUIManager : MonoBehaviour
         handsOnCanvas.gameObject.SetActive(false);
         inGuidedView = false;
         inHandsOnMode = false;
-        handsOnModeExplanationPart = true;
+        handsOnModeIntroPart = true;
         guidedTourIntroductionPart = true;
         Hue.instance.StopHueCoroutine();
         guidedTourCounter = -1;
     }
 
 
+    public void increaseHandsOnIntroPart()
+    {
+        if(handsOnIntroPanel1.activeSelf)
+        {
+            handsOnIntroPanel1.SetActive(false);
+            handsOnIntroPanel2.SetActive(true);
+            handsOnIntroPanel3.SetActive(false);
+        } else if (handsOnIntroPanel2.activeSelf)
+        {
+            handsOnIntroPanel1.SetActive(false);
+            handsOnIntroPanel2.SetActive(false);
+            handsOnIntroPanel3.SetActive(true);
+        }
+    }
+
+    public void increaseHandsonIntroDetailPart()
+    {
+        // TODO: Implement
+    }
+
     public void changeToHandsOnModeHandsOnPart()
     {
-        handsOnModeExplanationPart = false;
+        handsOnModeIntroPart = false;
         handsOnTrackedIconsPanel.SetActive(true);
-        handsOnExplanationPanel.SetActive(false);
+        handsOnIntroPanel1.SetActive(false);
+        handsOnIntroPanel2.SetActive(false);
+        handsOnIntroPanel3.SetActive(false);
         Hue.instance.StartHueCoroutine();
     }
 
