@@ -50,7 +50,7 @@ public class ModelManager : MonoBehaviour
 
     // 1. Model Guide Mode
     public void setFirstModelinGuideMode(){
-        setAllModelsInvisible();
+        //setAllModelsInvisible();
         nLayer.SetActive(true);
         pLayer.SetActive(true);
         contactLayerTop.SetActive(true);
@@ -69,28 +69,28 @@ public class ModelManager : MonoBehaviour
 
     // 2. Model Guide Mode
     public void setNLayerModelinGuideMode(){
-        setAllModelsInvisible();
+        //setAllModelsInvisible();
         nLayer.SetActive(true);
         nLayerLabel.SetActive(true);
     }
 
     // 3. Model Guide Mode
     public void setNAtomLayerModelinGuideMode(){
-        setAllModelsInvisible();
+        //setAllModelsInvisible();
         nLayer.SetActive(true);
         nAtomlayer.SetActive(true);
     }
 
     // 4. Model Guide Mode
     public void setPLayerModelinGuideMode(){
-        setAllModelsInvisible();
+        //setAllModelsInvisible();
         pLayer.SetActive(true);
         pLayerLabel.SetActive(true);
     }
 
     // 5. Model Guide Mode
     public void setPAtomLayerModelinGuideMode(){
-        setAllModelsInvisible();
+        //setAllModelsInvisible();
         pLayer.SetActive(true);
         pAtomLayer.SetActive(true);
         pLayerLabel.SetActive(true);
@@ -98,7 +98,7 @@ public class ModelManager : MonoBehaviour
 
     // 6. Model Guide Mode
     public void setContactLayerModelinGuideMode(){
-        setAllModelsInvisible();
+        //setAllModelsInvisible();
         contactLayerTop.SetActive(true);
         contactLayerBottom.SetActive(true);
         topContactLayerLabel.SetActive(true);
@@ -107,7 +107,7 @@ public class ModelManager : MonoBehaviour
 
     // 7. Model Guide Mode
     public void setElectronLayerModelinGuideMode(){
-        setAllModelsInvisible();
+        //setAllModelsInvisible();
         nLayer.SetActive(true);
         electrons.SetActive(true);
         nLayerLabel.SetActive(true);
@@ -115,7 +115,7 @@ public class ModelManager : MonoBehaviour
 
     // 8. Model Guide Mode
     public void setHolesLayerModelinGuideMode(){
-        setAllModelsInvisible();
+        //setAllModelsInvisible();
         pLayer.SetActive(true);
         holes.SetActive(true);
         pLayerLabel.SetActive(true);
@@ -123,7 +123,7 @@ public class ModelManager : MonoBehaviour
 
     // 1. Model Animation Mode
     public void setAnimationMode(){
-        setAllModelsInvisible();
+        //setAllModelsInvisible();
         nLayer.SetActive(true);
         electrons.SetActive(true);
         pLayer.SetActive(true);
@@ -137,18 +137,28 @@ public class ModelManager : MonoBehaviour
 
     //3. Model Contact layer Animation mode
     public void setContactlayerAnimationMode(){
+        nLayer.SetActive(true);
+        electrons.SetActive(true);
+        pLayer.SetActive(true);
+        holes.SetActive(true);
         contactLayerTop.SetActive(true);
         contactLayerBottom.SetActive(true);
     }
 
     //4. Model Appliance (propeller) Animation mode
     public void setApplianceAnimationMode(){
+        nLayer.SetActive(true);
+        electrons.SetActive(true);
+        pLayer.SetActive(true);
+        holes.SetActive(true);
+        contactLayerTop.SetActive(true);
+        contactLayerBottom.SetActive(true);
         appliance.SetActive(true);
     }
 
     // Hands on mode!!!
     public void setModelsHandsOnMode(){
-        setAllModelsInvisible();
+        //setAllModelsInvisible();
         sunSphere.SetActive(true);
         sunray.SetActive(true);
         nLayer.SetActive(true);

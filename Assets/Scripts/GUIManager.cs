@@ -92,6 +92,7 @@ public class GUIManager : MonoBehaviour
             handsOnTrackedIconsPanel.SetActive(false);
             handsOnExplanationPanel.SetActive(true);
         }
+        modelManager.setModelsHandsOnMode();
     }
 
     public void changeToHomeScreen()
@@ -179,43 +180,95 @@ public class GUIManager : MonoBehaviour
 
         switch(guidedTourCounter)
         {
+            case 0:
+                modelManager.setAllModelsInvisible();
+                modelManager.setFirstModelinGuideMode();
+                break;
             case 1:
+                modelManager.setAllModelsInvisible();
+                modelManager.setFirstModelinGuideMode();
+                break;
+            case 2:
+                modelManager.setAllModelsInvisible();
                 modelManager.setFirstModelinGuideMode();
                 break;
             case 3:
+                modelManager.setAllModelsInvisible();
                 modelManager.setNLayerModelinGuideMode();
                 break;
             case 4:
+                modelManager.setAllModelsInvisible();
                 modelManager.setNAtomLayerModelinGuideMode();
                 break;
             case 5:
+                modelManager.setAllModelsInvisible();
                 modelManager.setPLayerModelinGuideMode();
                 break;
             case 6:
+                modelManager.setAllModelsInvisible();
                 modelManager.setPAtomLayerModelinGuideMode();
                 break;
             case 7:
+                modelManager.setAllModelsInvisible();
+                modelManager.setContactLayerModelinGuideMode();
+                break;
+            case 8:
+                modelManager.setAllModelsInvisible();
+                modelManager.setContactLayerModelinGuideMode();
+                break;
+            case 9:
+                modelManager.setAllModelsInvisible();
                 modelManager.setContactLayerModelinGuideMode();
                 break;
             case 10:
                 modelManager.setAllModelsInvisible();
+                modelManager.setAnimationMode();
+                break;
+            case 11:
+                modelManager.setAllModelsInvisible();
+                modelManager.setAnimationMode();
                 break;
             case 12:
+                modelManager.setAllModelsInvisible();
+                modelManager.setElectronLayerModelinGuideMode();
+                break;
+            case 13:
+                modelManager.setAllModelsInvisible();
                 modelManager.setElectronLayerModelinGuideMode();
                 break;
             case 14:
+                modelManager.setAllModelsInvisible();
+                modelManager.setHolesLayerModelinGuideMode();
+                break;
+            case 15:
+                modelManager.setAllModelsInvisible();
                 modelManager.setHolesLayerModelinGuideMode();
                 break;
             case 16:
+                modelManager.setAllModelsInvisible();
                 modelManager.setAnimationMode();
                 break;
             case 17:
-                modelManager.setSunRayAnimationMode();
+                modelManager.setAllModelsInvisible();
+                //PNJunction
+                modelManager.setAnimationMode();
+                break;
+            case 18:
+                modelManager.setAllModelsInvisible();
+                // + and - model for changed poles
+                modelManager.setAnimationMode();
+                break;
+            case 19:
+                modelManager.setAllModelsInvisible();
+                modelManager.setAnimationMode();
                 break;
             case 20:
-                modelManager.setContactlayerAnimationMode();
+                modelManager.setAllModelsInvisible();
+                // new wire for house
+                modelManager.setApplianceAnimationMode();
                 break;
             case 21:
+                modelManager.setAllModelsInvisible();
                 modelManager.setApplianceAnimationMode();
                 break;
             case 22:
