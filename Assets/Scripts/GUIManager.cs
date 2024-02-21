@@ -274,9 +274,6 @@ public class GUIManager : MonoBehaviour
                 modelManager.setAllModelsInvisible();
                 modelManager.setApplianceAnimationMode();
                 break;
-            case 22:
-                modelManager.setAllModelsInvisible();
-                break;
             default: 
                 break;
         }
