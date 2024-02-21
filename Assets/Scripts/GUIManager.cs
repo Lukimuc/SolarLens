@@ -33,7 +33,7 @@ public class GUIManager : MonoBehaviour
     [SerializeField] private Sprite muteSprite;
     [SerializeField] private Sprite unmuteSprite;
 
-    private int guidedTourCounter = 0;
+    private int guidedTourCounter = -1;
     private bool inGuidedView = false;
     public bool inHandsOnMode = false;
 
@@ -104,7 +104,7 @@ public class GUIManager : MonoBehaviour
         handsOnModeExplanationPart = true;
         guidedTourIntroductionPart = true;
         Hue.instance.StopHueCoroutine();
-        guidedTourCounter = 0;
+        guidedTourCounter = -1;
     }
 
 
@@ -122,10 +122,7 @@ public class GUIManager : MonoBehaviour
         guidedIntroductionPanel.SetActive(false);
         guidedExplanationPanel.SetActive(true);
         guidedFinishPanel.SetActive(false);
-        if (guidedTourCounter == 0)
-        {
-            prevBtn.interactable = false;
-        }
+        guidedTourChange(true);
     }
 
     public void changeMuteImage()
@@ -146,10 +143,13 @@ public class GUIManager : MonoBehaviour
     {
         //Debug.Log(guidedTourCounter);
 
-        if (increase && guidedTourCounter >= 0 && guidedTourCounter <= titles.Count)
+        if (increase && guidedTourCounter <= titles.Count)
         {
             guidedTourCounter++;
-        } else guidedTourCounter--;
+        } else if (guidedTourCounter >= 0)
+        {
+            guidedTourCounter--;
+        }
 
 
         if (guidedTourCounter == 0)
