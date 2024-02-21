@@ -40,6 +40,8 @@ public class GUIManager : MonoBehaviour
     public bool handsOnModeExplanationPart = true;
     private bool guidedTourIntroductionPart = true;
 
+    public ModelManager modelManager;
+
 
     private void Awake()
     {
