@@ -27,6 +27,7 @@ public class electricityGenerationFormula : MonoBehaviour
     private float distance = 0.1f;
 
     public TextMeshProUGUI angleText;
+  
     public TextMeshProUGUI eText;
     public TextMeshProUGUI dText;
 
@@ -59,11 +60,14 @@ public class electricityGenerationFormula : MonoBehaviour
             float intensity = sliderValue;
             angle = calculateAngle();
             distance = calculateDistance();
-            dText.text = "Distance: " + distance;
+            
 
 
             electricityValue = intensity * ((Mathf.Sin(angle)) / (Mathf.Pow(distance, 2)));
             eText.text = "Electricity: " + electricityValue;
+            
+            dText.text = "" + Mathf.Floor(distance);
+            angleText.text = "" + Mathf.Floor(angle) + "°";
         }
     }
 
@@ -89,14 +93,14 @@ public class electricityGenerationFormula : MonoBehaviour
 
             Vector3 topPlaneNormal = solarCell.up;
 
-            float angle = Vector3.Angle(sunshineDirection, topPlaneNormal);
+            angle = Vector3.Angle(sunshineDirection, topPlaneNormal);
 
             //adapt values to real world
             angle = angle - 90;
             if(angle < 0){
                 angle = 0;
             }
-            angleText.text = "Angle: " + angle;
+            
         }
         return angle;
     }
