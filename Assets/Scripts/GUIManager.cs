@@ -260,7 +260,7 @@ public class GUIManager : MonoBehaviour
                 break;
             case 19:
                 modelManager.setAllModelsInvisible();
-                modelManager.setAnimationMode();
+                modelManager.setAnimationModeWithContacts();
                 break;
             case 20:
                 modelManager.setAllModelsInvisible();

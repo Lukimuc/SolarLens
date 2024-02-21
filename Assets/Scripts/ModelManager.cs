@@ -130,6 +130,16 @@ public class ModelManager : MonoBehaviour
         holes.SetActive(true);
     }
 
+    public void setAnimationModeWithContacts(){
+        //setAllModelsInvisible();
+        nLayer.SetActive(true);
+        electrons.SetActive(true);
+        pLayer.SetActive(true);
+        holes.SetActive(true);
+        contactLayerTop.SetActive(true);
+        contactLayerBottom.SetActive(true);
+    }
+
     //2. Model SunRay Animation mode
     public void setSunRayAnimationMode(){
         //Wir haben noch keinen Sonnenstrahl für die Animation
