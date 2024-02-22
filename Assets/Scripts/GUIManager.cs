@@ -25,6 +25,7 @@ public class GUIManager : MonoBehaviour
     [SerializeField] private GameObject handsOnTrackedIconsPanelTop;
     [SerializeField] private UnityEngine.UI.Button handsOnTrackedNextButton;
     [SerializeField] private GameObject handsOnAngleDistancePanel;
+    [SerializeField] private GameObject handsOnInfoPanel;
     [SerializeField] private GameObject handsOnIntroPanel1;
     [SerializeField] private GameObject handsOnIntroPanel2;
     [SerializeField] private GameObject handsOnIntroPanel3;
@@ -32,7 +33,6 @@ public class GUIManager : MonoBehaviour
     [SerializeField] private GameObject handsOnIntroDetailPanel2;
     [SerializeField] private GameObject handsOnIntroDetailPanel3;
     [SerializeField] private GameObject guidedMuteImageField;
-    [SerializeField] private GameObject handsOnMuteImageField;
 
     [SerializeField] private GameObject guidedIntroductionPanel;
     [SerializeField] private GameObject guidedExplanationPanel;
@@ -102,7 +102,7 @@ public class GUIManager : MonoBehaviour
             handsOnTrackedNextButton.interactable = true;
         } else
         {
-            handsOnTrackedNextButton.interactable= false;
+            //handsOnTrackedNextButton.interactable= false;
         }
 
         disableAllHandsOnIntroUIs();
@@ -199,11 +199,9 @@ public class GUIManager : MonoBehaviour
         if(SoundManager.instance.soundMuted)
         {
             guidedMuteImageField.GetComponent<UnityEngine.UI.Image>().sprite = unmuteSprite;
-            handsOnMuteImageField.GetComponent<UnityEngine.UI.Image>().sprite = unmuteSprite;
         } else
         {
             guidedMuteImageField.GetComponent<UnityEngine.UI.Image>().sprite = muteSprite;
-            handsOnMuteImageField.GetComponent<UnityEngine.UI.Image>().sprite = muteSprite;
         }
     }
 
