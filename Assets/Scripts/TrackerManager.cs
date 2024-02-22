@@ -32,6 +32,7 @@ public class TrackerManager : MonoBehaviour
         {
             solarTrackedImageFieldTop.sprite = solarTrackedSprite;
             solarTrackedImageFieldMid.sprite = solarTrackedSprite;
+            GUIManager.instance.disableQRCode();
             solarCellTracked = true;
         }
         if(solarCellTracked && sunTracked)

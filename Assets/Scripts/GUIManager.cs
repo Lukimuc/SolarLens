@@ -484,4 +484,9 @@ public class GUIManager : MonoBehaviour
         handsOnIntroDetailPanel2.SetActive(false);
         handsOnIntroDetailPanel3.SetActive(false);
     }
+
+    public void disableQRCode()
+    {
+        guidedQRCode.SetActive(false);
+    }
 }
