@@ -38,6 +38,8 @@ public class ModelManager : MonoBehaviour
     public GameObject sunRay2;
     public GameObject sunRay3;
 
+    public GameObject electronHandsOn;
+
     //public GameObject electronLabel;
     //public GameObject holesLabel;
 
@@ -210,6 +212,10 @@ public class ModelManager : MonoBehaviour
         pLayer.SetActive(true);
         contactLayerTop.SetActive(true);
         contactLayerBottom.SetActive(true);
+        electronHandsOn.SetActive(true);
+        sunRay1.SetActive(false);
+        sunRay2.SetActive(false);
+        sunRay3.SetActive(false);
     }
 
     //set Children of parent object Active
@@ -249,6 +255,7 @@ public class ModelManager : MonoBehaviour
         sunRay1.SetActive(false);
         sunRay2.SetActive(false);
         sunRay3.SetActive(false);
+        electronHandsOn.SetActive(false);
     }
 
 
