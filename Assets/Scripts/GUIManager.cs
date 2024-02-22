@@ -83,6 +83,7 @@ public class GUIManager : MonoBehaviour
         guidedTourCanvas.gameObject.SetActive(true);
         guidedQRCode.SetActive(false);
         inGuidedView = true;
+        modelManager.setAllModelsInvisible();
         if(guidedTourIntroductionPart)
         {
             guidedIntroductionPanel.SetActive(true);

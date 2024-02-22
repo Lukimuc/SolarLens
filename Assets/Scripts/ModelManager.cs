@@ -143,6 +143,9 @@ public class ModelManager : MonoBehaviour
         holes.SetActive(true);
         contactLayerTop.SetActive(true);
         contactLayerBottom.SetActive(true);
+        sunRay1.SetActive(true);
+        sunRay2.SetActive(true);
+        sunRay3.SetActive(true);
     }
 
     public void setJunctionLayer(){
