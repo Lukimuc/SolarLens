@@ -158,6 +158,7 @@ public class GUIManager : MonoBehaviour
         inHandsOnMode = false;
         handsOnModeIntroPart = true;
         guidedTourIntroductionPart = true;
+        SoundManager.instance.stopSound();
         Hue.instance.StopHueCoroutine();
         //solarCellAnimator.SetTrigger("No_Animation");
         guidedTourCounter = -1;
