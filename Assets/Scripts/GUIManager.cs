@@ -153,6 +153,7 @@ public class GUIManager : MonoBehaviour
         handsOnCanvas.gameObject.SetActive(false);
         inGuidedView = false;
         inHandsOnMode = false;
+        handsOnModeIntroPart = true;
         guidedTourIntroductionPart = true;
         Hue.instance.StopHueCoroutine();
         //solarCellAnimator.SetTrigger("No_Animation");
@@ -216,7 +217,6 @@ public class GUIManager : MonoBehaviour
 
     public void changeToHandsOnModeHandsOnPart()
     {
-        handsOnModeIntroPart = false;
         handsOnTrackedIconsPanelTop.SetActive(true);
         handsOnAngleDistancePanel.SetActive(true);
         handsOnInfoPanel.SetActive(true);
