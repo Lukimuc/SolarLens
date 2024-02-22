@@ -89,9 +89,9 @@ public class GUIManager : MonoBehaviour
         inGuidedView = true;
         modelManager.setAllModelsInvisible();
         solarCellAnimator = solarCellObject.GetComponent<Animator>();
-        Debug.Log(solarCellAnimator);
-        solarCellAnimator.enabled = false;
+        //Debug.Log(solarCellAnimator);
         solarCellAnimator.SetTrigger("No_Animation");
+        solarCellAnimator.enabled = false;
         if (guidedTourIntroductionPart)
         {
             guidedIntroductionPanel.SetActive(true);
@@ -136,6 +136,7 @@ public class GUIManager : MonoBehaviour
         guidedTourIntroductionPart = true;
         Hue.instance.StopHueCoroutine();
         solarCellAnimator.SetTrigger("No_Animation");
+        solarCellAnimator.enabled = false;
         guidedTourCounter = -1;
     }
 
@@ -194,6 +195,7 @@ public class GUIManager : MonoBehaviour
         handsOnAngleDistancePanel.SetActive(true);
         handsOnInfoPanel.SetActive(true);
         disableAllHandsOnIntroUIs();
+        solarCellAnimator.enabled = true;
         solarCellAnimator.SetTrigger("hands_on_anim");
         Hue.instance.StartHueCoroutine();
     }
@@ -249,6 +251,8 @@ public class GUIManager : MonoBehaviour
             guidedTourIntroductionPart = false;
             guidedExplanationPanel.SetActive(false);
             guidedIntroductionPanel.SetActive(false);
+            solarCellAnimator.SetTrigger("No_Animation");
+            solarCellAnimator.enabled = false;
             guidedFinishPanel.SetActive(true);
             return;
         }
@@ -331,11 +335,14 @@ public class GUIManager : MonoBehaviour
             case 15:
                 modelManager.setAllModelsInvisible();
                 modelManager.setHolesLayerModelinGuideMode();
+                solarCellAnimator.SetTrigger("No_Animation");
+                solarCellAnimator.enabled = false;
                 break;
             case 16:
                 modelManager.setAllModelsInvisible();
                 modelManager.setAnimationMode();
                 Debug.Log("Play 1 Animation!!!");
+                solarCellAnimator.enabled = true;
                 solarCellAnimator.SetTrigger("01_Elektroden");
                 break;
             case 17:
@@ -343,16 +350,20 @@ public class GUIManager : MonoBehaviour
                 //PNJunction
                 modelManager.setJunctionLayer();
                 solarCellAnimator.SetTrigger("No_Animation");
+                solarCellAnimator.enabled = false;
                 break;
             case 18:
                 modelManager.setAllModelsInvisible();
                 // + and - model for changed poles
                 modelManager.setAnimationMode();
+                solarCellAnimator.enabled = true;
                 solarCellAnimator.SetTrigger("02_Schichten");
                 break;
             case 19:
+                Hue.instance.changeBrightness(0);
                 modelManager.setAllModelsInvisible();
                 modelManager.setAnimationModeWithContacts();
+                solarCellAnimator.enabled = true;
                 solarCellAnimator.SetTrigger("03_Sonnenstrahl");
                 break;
             case 20:
@@ -360,6 +371,7 @@ public class GUIManager : MonoBehaviour
                 modelManager.setAllModelsInvisible();
                 // new wire for house
                 modelManager.setApplianceAnimationMode();
+                solarCellAnimator.enabled = true;
                 solarCellAnimator.SetTrigger("04_Stromkreis");
                 // Anim 04
                 break;
