@@ -17,7 +17,8 @@ public class electricityGenerationFormula : MonoBehaviour
     public Transform solarCell; 
 
     public Transform cloud;
-
+    
+    public GameObject sunray;
 
 
 
@@ -119,7 +120,7 @@ public class electricityGenerationFormula : MonoBehaviour
 		sliderValue = brightnessSlider.value;
 
 
-        float newAlpha = 255 - (255 * (sliderValue/100));
+        float newAlpha = 1 - (sliderValue/100);
         //cloudText.text = "Cloudvalue: " + newAlpha;
         if(cloud != null){
             foreach(Transform child in cloud){
@@ -136,9 +137,24 @@ public class electricityGenerationFormula : MonoBehaviour
                     // Assign the new color back to the material
                     mat.color = currentColor;
                 }
+            }
         }
-            
 
+        float newAlphaSunray = sliderValue/100;
+
+        if(sunray != null){
+            // Access the material of the object
+            Material mat = sunray.gameObject.GetComponent<Renderer>().material;
+
+            // Get the current color of the material
+            Color currentColor = mat.color;
+
+            // Change the alpha value of the current color
+            currentColor.a = newAlphaSunray;
+
+            // Assign the new color back to the material
+            mat.color = currentColor;
+    
         }
 	}
 }
