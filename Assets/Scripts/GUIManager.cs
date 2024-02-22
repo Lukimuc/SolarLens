@@ -136,15 +136,15 @@ public class GUIManager : MonoBehaviour
         {
             showHandsOnIntro();
         }
-        modelManager.setAllModelsInvisible();
-        modelManager.setModelsHandsOnMode();
-        solarCellAnimator.enabled = false;
         solarCellAnimator.SetBool("No_Anim", true);
         solarCellAnimator.SetBool("01_Elektrode", false);
         solarCellAnimator.SetBool("02_Schicht", false);
         solarCellAnimator.SetBool("03_Sonne", false);
         solarCellAnimator.SetBool("04_Strom", false);
         solarCellAnimator.SetBool("hands_on", false);
+        solarCellAnimator.enabled = false;
+        modelManager.setAllModelsInvisible();
+        modelManager.setModelsHandsOnMode();
     }
 
     public void changeToHomeScreen()
@@ -160,7 +160,6 @@ public class GUIManager : MonoBehaviour
         guidedTourIntroductionPart = true;
         Hue.instance.StopHueCoroutine();
         //solarCellAnimator.SetTrigger("No_Animation");
-        solarCellAnimator.enabled = false;
         guidedTourCounter = -1;
         solarCellAnimator.SetBool("No_Anim", true);
         solarCellAnimator.SetBool("01_Elektrode", false);
@@ -168,6 +167,7 @@ public class GUIManager : MonoBehaviour
         solarCellAnimator.SetBool("03_Sonne", false);
         solarCellAnimator.SetBool("04_Strom", false);
         solarCellAnimator.SetBool("hands_on", false);
+        solarCellAnimator.enabled = false;
         modelManager.setAllModelsInvisible();
     }
 
@@ -178,9 +178,18 @@ public class GUIManager : MonoBehaviour
         handsOnTrackedIconsPanelTop.SetActive(false);
         handsOnInfoPanel.SetActive(false);
         handsOnSlider.SetActive(false);
+
         disableAllHandsOnIntroUIs();
         handsOnIntroPanel1.SetActive(true);
+        solarCellAnimator.SetBool("No_Anim", true);
+        solarCellAnimator.SetBool("01_Elektrode", false);
+        solarCellAnimator.SetBool("02_Schicht", false);
+        solarCellAnimator.SetBool("03_Sonne", false);
+        solarCellAnimator.SetBool("04_Strom", false);
+        solarCellAnimator.SetBool("hands_on", false);
+        solarCellAnimator.enabled = false;
         modelManager.setAllModelsInvisible();
+        modelManager.setModelsHandsOnMode();
     }
 
     public void increaseHandsOnIntroPart()
@@ -228,8 +237,8 @@ public class GUIManager : MonoBehaviour
         handsOnInfoPanel.SetActive(true);
         handsOnSlider.SetActive(true);
         disableAllHandsOnIntroUIs();
-        //solarCellAnimator.SetTrigger("hands_on_anim");
         Hue.instance.StartHueCoroutine();
+
         solarCellAnimator.enabled = true;
         solarCellAnimator.SetBool("No_Anim", false);
         solarCellAnimator.SetBool("01_Elektrode", false);
