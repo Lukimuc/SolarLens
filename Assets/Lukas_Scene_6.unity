@@ -20322,6 +20322,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 7a1e2e62245a0724290093ef56112368,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -6093592463355912122, guid: 7a1e2e62245a0724290093ef56112368,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -20347,10 +20352,20 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 17dd8e6068820f24fbdebcd846c44c74, type: 2}
+    - target: {fileID: -516098083770646512, guid: 7a1e2e62245a0724290093ef56112368,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7a1e2e62245a0724290093ef56112368,
         type: 3}
       propertyPath: m_Name
       value: applianceWireV2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: 7a1e2e62245a0724290093ef56112368,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
