@@ -160,6 +160,7 @@ public class GUIManager : MonoBehaviour
         handsOnModeIntroPart = true;
         guidedTourIntroductionPart = true;
         SoundManager.instance.stopSound();
+        Hue.instance.changeBrightness(0);
         Hue.instance.StopHueCoroutine();
         //solarCellAnimator.SetTrigger("No_Animation");
         guidedTourCounter = -1;
@@ -431,7 +432,6 @@ public class GUIManager : MonoBehaviour
                  solarCellAnimator.SetBool("04_Strom", false);
                 break;
             case 20:
-                Hue.instance.changeBrightness(200);
                 modelManager.setAllModelsInvisible();
                 // new wire for house
                 modelManager.setApplianceAnimationMode();
@@ -449,6 +449,11 @@ public class GUIManager : MonoBehaviour
             default: 
                 break;
         }
+    }
+
+    public void turnLampOnGuidedMode()
+    {
+        Hue.instance.changeBrightness(200);
     }
 
     private void disableAllHandsOnIntroUIs()
