@@ -154,8 +154,8 @@ public class ModelManager : MonoBehaviour
         sunRay2.SetActive(false);
         sunRay3.SetActive(false);
         electronHandsOn.SetActive(false);
-        electronLabel.SetActive(true);
-        holeLabel.SetActive(true);
+        electronLabel.SetActive(false);
+        holeLabel.SetActive(false);
     }
 
     public void setAnimationModeWithContacts(){
