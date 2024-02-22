@@ -23,7 +23,6 @@ public class cloud : MonoBehaviour
             UnityEngine.Vector3 midpoint = (sun.position + solarCell.position) / 2;
             UnityEngine.Vector3 midmidpoint = (sun.position + midpoint) / 2;
             transform.position = midmidpoint;
-            this.transform.LookAt(sun.transform.position);
 
 
 
