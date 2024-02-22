@@ -38,6 +38,11 @@ public class ModelManager : MonoBehaviour
     public GameObject sunRay2;
     public GameObject sunRay3;
 
+    //public GameObject electronLabel;
+    //public GameObject holesLabel;
+
+
+
     
 
 
