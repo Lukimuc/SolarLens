@@ -75,6 +75,14 @@ public class GUIManager : MonoBehaviour
         homeScreen.gameObject.SetActive(true);
         handsOnCanvas.gameObject.SetActive(false);
         guidedTourCanvas.gameObject.SetActive(false);
+        solarCellAnimator = solarCellObject.GetComponent<Animator>();
+        solarCellAnimator.enabled = false;
+        solarCellAnimator.SetBool("No_Anim", true);
+        solarCellAnimator.SetBool("01_Elektrode", false);
+        solarCellAnimator.SetBool("02_Schicht", false);
+        solarCellAnimator.SetBool("03_Sonne", false);
+        solarCellAnimator.SetBool("04_Strom", false);
+        solarCellAnimator.SetBool("hands_on", false);
     }
 
 
@@ -88,10 +96,15 @@ public class GUIManager : MonoBehaviour
         guidedQRCode.SetActive(false);
         inGuidedView = true;
         modelManager.setAllModelsInvisible();
-        solarCellAnimator = solarCellObject.GetComponent<Animator>();
         //Debug.Log(solarCellAnimator);
         //solarCellAnimator.SetTrigger("No_Animation");
         solarCellAnimator.enabled = false;
+        solarCellAnimator.SetBool("No_Anim", true);
+        solarCellAnimator.SetBool("01_Elektrode", false);
+        solarCellAnimator.SetBool("02_Schicht", false);
+        solarCellAnimator.SetBool("03_Sonne", false);
+        solarCellAnimator.SetBool("04_Strom", false);
+        solarCellAnimator.SetBool("hands_on", false);
         if (guidedTourIntroductionPart)
         {
             guidedIntroductionPanel.SetActive(true);
@@ -122,6 +135,13 @@ public class GUIManager : MonoBehaviour
         }
         modelManager.setAllModelsInvisible();
         modelManager.setModelsHandsOnMode();
+        solarCellAnimator.enabled = false;
+        solarCellAnimator.SetBool("No_Anim", true);
+        solarCellAnimator.SetBool("01_Elektrode", false);
+        solarCellAnimator.SetBool("02_Schicht", false);
+        solarCellAnimator.SetBool("03_Sonne", false);
+        solarCellAnimator.SetBool("04_Strom", false);
+        solarCellAnimator.SetBool("hands_on", false);
     }
 
     public void changeToHomeScreen()
@@ -138,6 +158,12 @@ public class GUIManager : MonoBehaviour
         //solarCellAnimator.SetTrigger("No_Animation");
         solarCellAnimator.enabled = false;
         guidedTourCounter = -1;
+        solarCellAnimator.SetBool("No_Anim", true);
+        solarCellAnimator.SetBool("01_Elektrode", false);
+        solarCellAnimator.SetBool("02_Schicht", false);
+        solarCellAnimator.SetBool("03_Sonne", false);
+        solarCellAnimator.SetBool("04_Strom", false);
+        solarCellAnimator.SetBool("hands_on", false);
     }
 
     public void showHandsOnIntro()
@@ -195,9 +221,15 @@ public class GUIManager : MonoBehaviour
         handsOnAngleDistancePanel.SetActive(true);
         handsOnInfoPanel.SetActive(true);
         disableAllHandsOnIntroUIs();
-        solarCellAnimator.enabled = true;
         //solarCellAnimator.SetTrigger("hands_on_anim");
         Hue.instance.StartHueCoroutine();
+        solarCellAnimator.enabled = true;
+        solarCellAnimator.SetBool("No_Anim", false);
+        solarCellAnimator.SetBool("01_Elektrode", false);
+        solarCellAnimator.SetBool("02_Schicht", false);
+        solarCellAnimator.SetBool("03_Sonne", false);
+        solarCellAnimator.SetBool("04_Strom", false);
+        solarCellAnimator.SetBool("hands_on", true);
     }
 
     public void changeToGuidedTourExplanationPart()
@@ -347,6 +379,7 @@ public class GUIManager : MonoBehaviour
                 modelManager.setAnimationMode();
                 solarCellAnimator.SetBool("01_Elektrode", true);
                 solarCellAnimator.SetBool("No_Anim", false);
+                solarCellAnimator.SetBool("02_Schicht", false);
                 Debug.Log("Play 1 Animation!!!");
                 //solarCellAnimator.SetTrigger("01_Elektroden");
                 break;
@@ -364,7 +397,7 @@ public class GUIManager : MonoBehaviour
                 solarCellAnimator.enabled = true;
                 solarCellAnimator.SetBool("01_Elektrode", false);
                 solarCellAnimator.SetBool("02_Schicht", true);
-
+                solarCellAnimator.SetBool("03_Sonne", false);
                 //solarCellAnimator.SetTrigger("02_Schichten");
                 break;
             case 19:
@@ -373,6 +406,9 @@ public class GUIManager : MonoBehaviour
                 modelManager.setAnimationModeWithContacts();
                 solarCellAnimator.enabled = true;
                 //solarCellAnimator.SetTrigger("03_Sonnenstrahl");
+                solarCellAnimator.SetBool("03_Sonne", true);
+                solarCellAnimator.SetBool("02_Schicht", false);
+                 solarCellAnimator.SetBool("04_Strom", false);
                 break;
             case 20:
                 Hue.instance.changeBrightness(200);
@@ -382,6 +418,8 @@ public class GUIManager : MonoBehaviour
                 solarCellAnimator.enabled = true;
                 //solarCellAnimator.SetTrigger("04_Stromkreis");
                 // Anim 04
+                solarCellAnimator.SetBool("03_Sonne", false);
+                solarCellAnimator.SetBool("04_Strom", true);
                 break;
             case 21:
                 modelManager.setAllModelsInvisible();
