@@ -106,6 +106,7 @@ public class ModelManager : MonoBehaviour
         pLayer.SetActive(true);
         pAtomLayer.SetActive(true);
         pLayerLabel.SetActive(true);
+        electronHandsOn.SetActive(false);
     }
 
     // 6. Model Guide Mode
@@ -115,6 +116,7 @@ public class ModelManager : MonoBehaviour
         contactLayerBottom.SetActive(true);
         topContactLayerLabel.SetActive(true);
         bottomContactLayerLabel.SetActive(true);
+        electronHandsOn.SetActive(false);
     }
 
     // 7. Model Guide Mode
@@ -123,6 +125,7 @@ public class ModelManager : MonoBehaviour
         nLayer.SetActive(true);
         electrons.SetActive(true);
         nLayerLabel.SetActive(true);
+        electronHandsOn.SetActive(false);
     }
 
     // 8. Model Guide Mode
@@ -131,6 +134,7 @@ public class ModelManager : MonoBehaviour
         pLayer.SetActive(true);
         holes.SetActive(true);
         pLayerLabel.SetActive(true);
+        electronHandsOn.SetActive(false);
     }
 
     // 1. Model Animation Mode
@@ -143,6 +147,7 @@ public class ModelManager : MonoBehaviour
         sunRay1.SetActive(false);
         sunRay2.SetActive(false);
         sunRay3.SetActive(false);
+        electronHandsOn.SetActive(false);
     }
 
     public void setAnimationModeWithContacts(){
@@ -156,6 +161,7 @@ public class ModelManager : MonoBehaviour
         //sunRay1.SetActive(true);
         //sunRay2.SetActive(true);
         //sunRay3.SetActive(true);
+        electronHandsOn.SetActive(false);
     }
 
     public void setJunctionLayer(){
@@ -164,6 +170,7 @@ public class ModelManager : MonoBehaviour
         npLayerLabel.SetActive(true);
         electrons.SetActive(true);
         holes.SetActive(true);
+        electronHandsOn.SetActive(false);
     }
 
     //2. Model SunRay Animation mode
@@ -175,6 +182,7 @@ public class ModelManager : MonoBehaviour
         sunRay1.SetActive(false);
         sunRay2.SetActive(false);
         sunRay3.SetActive(false);
+        electronHandsOn.SetActive(false);
         //Wir haben noch keinen Sonnenstrahl für die Animation
     }
 
@@ -186,6 +194,7 @@ public class ModelManager : MonoBehaviour
         holes.SetActive(true);
         contactLayerTop.SetActive(true);
         contactLayerBottom.SetActive(true);
+        electronHandsOn.SetActive(false);
     }
 
     //4. Model Appliance (propeller) Animation mode
@@ -200,6 +209,7 @@ public class ModelManager : MonoBehaviour
         sunRay1.SetActive(false);
         sunRay2.SetActive(false);
         sunRay3.SetActive(false);
+        electronHandsOn.SetActive(false);
     }
 
     // Hands on mode!!!
