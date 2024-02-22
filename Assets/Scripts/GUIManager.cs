@@ -464,14 +464,14 @@ public class GUIManager : MonoBehaviour
 
     private IEnumerator enableHandsOnVideo2()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(3);
         handsOnVideo2.gameObject.SetActive(true);
         StartCoroutine(enableHandsOnVideo3());
     }
 
     private IEnumerator enableHandsOnVideo3()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(3);
         handsOnVideo3.gameObject.SetActive(true);
     }
 
