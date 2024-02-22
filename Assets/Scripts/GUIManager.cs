@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using UnityEngine.Video;
 
 public class GUIManager : MonoBehaviour
 {
@@ -34,6 +35,8 @@ public class GUIManager : MonoBehaviour
     [SerializeField] private GameObject handsOnIntroDetailPanel1;
     [SerializeField] private GameObject handsOnIntroDetailPanel2;
     [SerializeField] private GameObject handsOnIntroDetailPanel3;
+    [SerializeField] private GameObject handsOnVideo2;
+    [SerializeField] private GameObject handsOnVideo3;
 
     [Space]
     [SerializeField] private GameObject guidedMuteImageField;
@@ -200,6 +203,9 @@ public class GUIManager : MonoBehaviour
         if(handsOnIntroPanel1.activeSelf)
         {
             disableAllHandsOnIntroUIs();
+            handsOnVideo2.gameObject.SetActive(false);
+            handsOnVideo3.gameObject.SetActive(false);
+            StartCoroutine(enableHandsOnVideo2());
             handsOnIntroPanel2.SetActive(true);
         } else if (handsOnIntroPanel2.activeSelf)
         {
@@ -454,6 +460,19 @@ public class GUIManager : MonoBehaviour
     public void turnLampOnGuidedMode()
     {
         Hue.instance.changeBrightness(200);
+    }
+
+    private IEnumerator enableHandsOnVideo2()
+    {
+        yield return new WaitForSeconds(2.5f);
+        handsOnVideo2.gameObject.SetActive(true);
+        StartCoroutine(enableHandsOnVideo3());
+    }
+
+    private IEnumerator enableHandsOnVideo3()
+    {
+        yield return new WaitForSeconds(2.5f);
+        handsOnVideo3.gameObject.SetActive(true);
     }
 
     private void disableAllHandsOnIntroUIs()
