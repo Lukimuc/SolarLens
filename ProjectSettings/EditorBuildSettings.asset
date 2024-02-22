@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/MainScene.unity
     guid: 38e859eecff2d5642aa1d047ca8258e0
   - enabled: 0
-    path: Assets/ChristinaScene.unity
+    path: Assets/Christina_Scene_1.unity
     guid: 5cfc90fb015bf87499a69819adb41fb1
   - enabled: 0
     path: Assets/Lukas_Scene_2.unity
