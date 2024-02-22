@@ -40,6 +40,10 @@ public class ModelManager : MonoBehaviour
 
     public GameObject electronHandsOn;
 
+    public GameObject electronLabel;
+
+    public GameObject holeLabel;
+
     //public GameObject electronLabel;
     //public GameObject holesLabel;
 
@@ -126,6 +130,7 @@ public class ModelManager : MonoBehaviour
         electrons.SetActive(true);
         nLayerLabel.SetActive(true);
         electronHandsOn.SetActive(false);
+        electronLabel.SetActive(true);
     }
 
     // 8. Model Guide Mode
@@ -135,6 +140,7 @@ public class ModelManager : MonoBehaviour
         holes.SetActive(true);
         pLayerLabel.SetActive(true);
         electronHandsOn.SetActive(false);
+        holeLabel.SetActive(true);
     }
 
     // 1. Model Animation Mode
@@ -148,6 +154,8 @@ public class ModelManager : MonoBehaviour
         sunRay2.SetActive(false);
         sunRay3.SetActive(false);
         electronHandsOn.SetActive(false);
+        electronLabel.SetActive(true);
+        holeLabel.SetActive(true);
     }
 
     public void setAnimationModeWithContacts(){
@@ -266,6 +274,8 @@ public class ModelManager : MonoBehaviour
         sunRay2.SetActive(false);
         sunRay3.SetActive(false);
         electronHandsOn.SetActive(false);
+        electronLabel.SetActive(false);
+        holeLabel.SetActive(false);
     }
 
 
