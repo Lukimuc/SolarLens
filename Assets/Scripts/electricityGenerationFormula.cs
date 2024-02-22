@@ -62,7 +62,7 @@ public class electricityGenerationFormula : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(GUIManager.instance.inHandsOnMode && !GUIManager.instance.handsOnModeIntroPart)
+        if(GUIManager.instance.inHandsOnMode)
         {
             float intensity = sliderValue;
             angle = calculateAngle();
