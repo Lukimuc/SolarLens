@@ -133,6 +133,7 @@ public class GUIManager : MonoBehaviour
         Hue.instance.StopHueCoroutine();
         handsOnAngleDistancePanel.SetActive(false);
         handsOnTrackedIconsPanelTop.SetActive(false);
+        handsOnInfoPanel.SetActive(false);
         disableAllHandsOnIntroUIs();
         handsOnIntroPanel1.SetActive(true);
     }
@@ -180,6 +181,7 @@ public class GUIManager : MonoBehaviour
         handsOnModeIntroPart = false;
         handsOnTrackedIconsPanelTop.SetActive(true);
         handsOnAngleDistancePanel.SetActive(true);
+        handsOnInfoPanel.SetActive(true);
         disableAllHandsOnIntroUIs();
         Hue.instance.StartHueCoroutine();
     }
