@@ -165,6 +165,7 @@ public class GUIManager : MonoBehaviour
         solarCellAnimator.SetBool("03_Sonne", false);
         solarCellAnimator.SetBool("04_Strom", false);
         solarCellAnimator.SetBool("hands_on", false);
+        modelManager.setAllModelsInvisible();
     }
 
     public void showHandsOnIntro()
@@ -175,6 +176,7 @@ public class GUIManager : MonoBehaviour
         handsOnInfoPanel.SetActive(false);
         disableAllHandsOnIntroUIs();
         handsOnIntroPanel1.SetActive(true);
+        modelManager.setAllModelsInvisible();
     }
 
     public void increaseHandsOnIntroPart()
