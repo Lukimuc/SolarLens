@@ -138,6 +138,9 @@ public class ModelManager : MonoBehaviour
         electrons.SetActive(true);
         pLayer.SetActive(true);
         holes.SetActive(true);
+        sunRay1.SetActive(false);
+        sunRay2.SetActive(false);
+        sunRay3.SetActive(false);
     }
 
     public void setAnimationModeWithContacts(){
@@ -148,9 +151,9 @@ public class ModelManager : MonoBehaviour
         holes.SetActive(true);
         contactLayerTop.SetActive(true);
         contactLayerBottom.SetActive(true);
-        sunRay1.SetActive(true);
-        sunRay2.SetActive(true);
-        sunRay3.SetActive(true);
+        //sunRay1.SetActive(true);
+        //sunRay2.SetActive(true);
+        //sunRay3.SetActive(true);
     }
 
     public void setJunctionLayer(){
@@ -167,9 +170,9 @@ public class ModelManager : MonoBehaviour
         electrons.SetActive(true);
         pLayer.SetActive(true);
         holes.SetActive(true);
-        sunRay1.SetActive(true);
-        sunRay2.SetActive(true);
-        sunRay3.SetActive(true);
+        sunRay1.SetActive(false);
+        sunRay2.SetActive(false);
+        sunRay3.SetActive(false);
         //Wir haben noch keinen Sonnenstrahl für die Animation
     }
 
@@ -192,6 +195,9 @@ public class ModelManager : MonoBehaviour
         contactLayerTop.SetActive(true);
         contactLayerBottom.SetActive(true);
         appliance.SetActive(true);
+        sunRay1.SetActive(false);
+        sunRay2.SetActive(false);
+        sunRay3.SetActive(false);
     }
 
     // Hands on mode!!!
