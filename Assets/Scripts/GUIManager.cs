@@ -27,6 +27,7 @@ public class GUIManager : MonoBehaviour
     [SerializeField] private UnityEngine.UI.Button handsOnTrackedNextButton;
     [SerializeField] private GameObject handsOnAngleDistancePanel;
     [SerializeField] private GameObject handsOnInfoPanel;
+    [SerializeField] private GameObject handsOnSlider;
     [SerializeField] private GameObject handsOnIntroPanel1;
     [SerializeField] private GameObject handsOnIntroPanel2;
     [SerializeField] private GameObject handsOnIntroPanel3;
@@ -95,6 +96,8 @@ public class GUIManager : MonoBehaviour
         guidedTourCanvas.gameObject.SetActive(true);
         guidedQRCode.SetActive(false);
         inGuidedView = true;
+        SoundManager.instance.playSound("Guided-Einfuehrung");
+
         modelManager.setAllModelsInvisible();
         //Debug.Log(solarCellAnimator);
         //solarCellAnimator.SetTrigger("No_Animation");
@@ -174,6 +177,7 @@ public class GUIManager : MonoBehaviour
         handsOnAngleDistancePanel.SetActive(false);
         handsOnTrackedIconsPanelTop.SetActive(false);
         handsOnInfoPanel.SetActive(false);
+        handsOnSlider.SetActive(false);
         disableAllHandsOnIntroUIs();
         handsOnIntroPanel1.SetActive(true);
         modelManager.setAllModelsInvisible();
@@ -222,6 +226,7 @@ public class GUIManager : MonoBehaviour
         handsOnTrackedIconsPanelTop.SetActive(true);
         handsOnAngleDistancePanel.SetActive(true);
         handsOnInfoPanel.SetActive(true);
+        handsOnSlider.SetActive(true);
         disableAllHandsOnIntroUIs();
         //solarCellAnimator.SetTrigger("hands_on_anim");
         Hue.instance.StartHueCoroutine();
