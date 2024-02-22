@@ -112,6 +112,7 @@ public class GUIManager : MonoBehaviour
         {
             showHandsOnIntro();
         }
+        modelManager.setAllModelsInvisible();
         modelManager.setModelsHandsOnMode();
     }
 
