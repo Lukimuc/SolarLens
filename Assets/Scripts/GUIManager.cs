@@ -22,6 +22,7 @@ public class GUIManager : MonoBehaviour
     [SerializeField] private Canvas guidedTourCanvas;
     [SerializeField] private Canvas handsOnCanvas;
 
+    [Space]
     [SerializeField] private GameObject handsOnTrackedIconsPanelTop;
     [SerializeField] private UnityEngine.UI.Button handsOnTrackedNextButton;
     [SerializeField] private GameObject handsOnAngleDistancePanel;
@@ -32,12 +33,14 @@ public class GUIManager : MonoBehaviour
     [SerializeField] private GameObject handsOnIntroDetailPanel1;
     [SerializeField] private GameObject handsOnIntroDetailPanel2;
     [SerializeField] private GameObject handsOnIntroDetailPanel3;
-    [SerializeField] private GameObject guidedMuteImageField;
 
+    [Space]
+    [SerializeField] private GameObject guidedMuteImageField;
     [SerializeField] private GameObject guidedIntroductionPanel;
     [SerializeField] private GameObject guidedExplanationPanel;
     [SerializeField] private GameObject guidedQRCode;
     [SerializeField] private GameObject guidedFinishPanel;
+    [SerializeField] private GameObject solarCellObject;
     [SerializeField] private Sprite muteSprite;
     [SerializeField] private Sprite unmuteSprite;
 
@@ -48,6 +51,7 @@ public class GUIManager : MonoBehaviour
 
     public bool handsOnModeIntroPart = true;
     private bool guidedTourIntroductionPart = true;
+    private Animator solarCellAnimator;
 
     public ModelManager modelManager;
 
@@ -84,7 +88,11 @@ public class GUIManager : MonoBehaviour
         guidedQRCode.SetActive(false);
         inGuidedView = true;
         modelManager.setAllModelsInvisible();
-        if(guidedTourIntroductionPart)
+        solarCellAnimator = solarCellObject.GetComponent<Animator>();
+        Debug.Log(solarCellAnimator);
+        solarCellAnimator.enabled = false;
+        solarCellAnimator.SetTrigger("No_Animation");
+        if (guidedTourIntroductionPart)
         {
             guidedIntroductionPanel.SetActive(true);
             guidedExplanationPanel.SetActive(false);
@@ -127,6 +135,7 @@ public class GUIManager : MonoBehaviour
         inHandsOnMode = false;
         guidedTourIntroductionPart = true;
         Hue.instance.StopHueCoroutine();
+        solarCellAnimator.SetTrigger("No_Animation");
         guidedTourCounter = -1;
     }
 
@@ -185,6 +194,7 @@ public class GUIManager : MonoBehaviour
         handsOnAngleDistancePanel.SetActive(true);
         handsOnInfoPanel.SetActive(true);
         disableAllHandsOnIntroUIs();
+        solarCellAnimator.SetTrigger("hands_on_anim");
         Hue.instance.StartHueCoroutine();
     }
 
@@ -325,29 +335,32 @@ public class GUIManager : MonoBehaviour
             case 16:
                 modelManager.setAllModelsInvisible();
                 modelManager.setAnimationMode();
-                // Anim 01
+                Debug.Log("Play 1 Animation!!!");
+                solarCellAnimator.SetTrigger("01_Elektroden");
                 break;
             case 17:
                 modelManager.setAllModelsInvisible();
                 //PNJunction
                 modelManager.setJunctionLayer();
+                solarCellAnimator.SetTrigger("No_Animation");
                 break;
             case 18:
                 modelManager.setAllModelsInvisible();
                 // + and - model for changed poles
                 modelManager.setAnimationMode();
-                // Anim 02
+                solarCellAnimator.SetTrigger("02_Schichten");
                 break;
             case 19:
                 modelManager.setAllModelsInvisible();
                 modelManager.setAnimationModeWithContacts();
-                // Anim 03
+                solarCellAnimator.SetTrigger("03_Sonnenstrahl");
                 break;
             case 20:
                 Hue.instance.changeBrightness(200);
                 modelManager.setAllModelsInvisible();
                 // new wire for house
                 modelManager.setApplianceAnimationMode();
+                solarCellAnimator.SetTrigger("04_Stromkreis");
                 // Anim 04
                 break;
             case 21:
