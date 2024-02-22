@@ -324,6 +324,7 @@ public class GUIManager : MonoBehaviour
             case 16:
                 modelManager.setAllModelsInvisible();
                 modelManager.setAnimationMode();
+                // Anim 01
                 break;
             case 17:
                 modelManager.setAllModelsInvisible();
@@ -334,20 +335,24 @@ public class GUIManager : MonoBehaviour
                 modelManager.setAllModelsInvisible();
                 // + and - model for changed poles
                 modelManager.setAnimationMode();
+                // Anim 02
                 break;
             case 19:
                 modelManager.setAllModelsInvisible();
                 modelManager.setAnimationModeWithContacts();
+                // Anim 03
                 break;
             case 20:
                 Hue.instance.changeBrightness(200);
                 modelManager.setAllModelsInvisible();
                 // new wire for house
                 modelManager.setApplianceAnimationMode();
+                // Anim 04
                 break;
             case 21:
                 modelManager.setAllModelsInvisible();
                 modelManager.setApplianceAnimationMode();
+                // Anim 04 weiter
                 break;
             default: 
                 break;
