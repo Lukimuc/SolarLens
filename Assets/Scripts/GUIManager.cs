@@ -300,6 +300,7 @@ public class GUIManager : MonoBehaviour
             guidedTourIntroductionPart = false;
             guidedExplanationPanel.SetActive(false);
             guidedIntroductionPanel.SetActive(false);
+            SoundManager.instance.playSound("Guided-End");
             //solarCellAnimator.SetTrigger("No_Animation");
             solarCellAnimator.enabled = false;
             guidedFinishPanel.SetActive(true);
