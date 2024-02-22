@@ -34,8 +34,9 @@ public class ModelManager : MonoBehaviour
 
     public GameObject cloud;
 
-
-
+    public GameObject sunRay1;
+    public GameObject sunRay2;
+    public GameObject sunRay3;
 
     
 
@@ -154,6 +155,13 @@ public class ModelManager : MonoBehaviour
 
     //2. Model SunRay Animation mode
     public void setSunRayAnimationMode(){
+        nLayer.SetActive(true);
+        electrons.SetActive(true);
+        pLayer.SetActive(true);
+        holes.SetActive(true);
+        sunRay1.SetActive(true);
+        sunRay2.SetActive(true);
+        sunRay3.SetActive(true);
         //Wir haben noch keinen Sonnenstrahl für die Animation
     }
 
@@ -224,6 +232,9 @@ public class ModelManager : MonoBehaviour
         npLayer.SetActive(false);
         npLayerLabel.SetActive(false);
         cloud.SetActive(false);
+        sunRay1.SetActive(false);
+        sunRay2.SetActive(false);
+        sunRay3.SetActive(false);
     }
 
 
