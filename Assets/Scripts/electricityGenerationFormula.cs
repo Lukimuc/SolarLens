@@ -33,6 +33,9 @@ public class electricityGenerationFormula : MonoBehaviour
     public TextMeshProUGUI eText;
     public TextMeshProUGUI dText;
 
+    //public TextMeshProUGUI sliderText;
+    //public TextMeshProUGUI cloudText;
+
     public Slider brightnessSlider;
 
 
@@ -66,11 +69,13 @@ public class electricityGenerationFormula : MonoBehaviour
             
 
 
-            electricityValue = intensity * ((Mathf.Sin(angle)) / (Mathf.Pow(distance, 2)));
+            electricityValue = Mathf.Abs( intensity * ((Mathf.Sin(angle)) / (Mathf.Pow(distance, 2))));
+
             eText.text = "Electricity: " + electricityValue;
             
             dText.text = "" + Mathf.Floor(distance);
             angleText.text = "" + Mathf.Floor(angle) + "°";
+            //sliderText.text = "Slider: " + intensity;
         }
     }
 
@@ -115,11 +120,12 @@ public class electricityGenerationFormula : MonoBehaviour
 
 
         float newAlpha = 255 - (255 * (sliderValue/100));
+        //cloudText.text = "Cloudvalue: " + newAlpha;
         if(cloud != null){
             foreach(Transform child in cloud){
                 if (child.gameObject.GetComponent<Renderer>() != null){
                     // Access the material of the object
-                    Material mat = GetComponent<Renderer>().material;
+                    Material mat = child.gameObject.GetComponent<Renderer>().material;
 
                     // Get the current color of the material
                     Color currentColor = mat.color;
