@@ -100,7 +100,7 @@ public class GUIManager : MonoBehaviour
         guidedQRCode.SetActive(false);
         inGuidedView = true;
         SoundManager.instance.playSound("Guided-Einfuehrung");
-
+        modelManager.resetNandPLayer();
         modelManager.setAllModelsInvisible();
         //Debug.Log(solarCellAnimator);
         //solarCellAnimator.SetTrigger("No_Animation");
@@ -174,6 +174,7 @@ public class GUIManager : MonoBehaviour
         solarCellAnimator.SetBool("04_Strom", false);
         solarCellAnimator.SetBool("hands_on", false);
         solarCellAnimator.enabled = false;
+        modelManager.resetNandPLayer();
         modelManager.setAllModelsInvisible();
     }
 

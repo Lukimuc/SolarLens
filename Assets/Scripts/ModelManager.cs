@@ -250,6 +250,12 @@ public class ModelManager : MonoBehaviour
         }
     }
 
+
+    public void resetNandPLayer(){
+        nLayer.transform.localPosition = new Vector3(0f, 0.6f, 0f);
+        pLayer.transform.localPosition = new Vector3(0f, -0.6f, 0f);
+    }
+
     // Se all objects NOT active!
     public void setAllModelsInvisible(){
         sunSphere.SetActive(false);
