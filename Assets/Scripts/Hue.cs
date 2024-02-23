@@ -87,7 +87,7 @@ public class Hue : MonoBehaviour
         } else if(brighntess >= 254)
         {
             String bright = 254.ToString();
-            putBrightnessBody = "{\"on\": false, \"bri\": " + bright + "}";
+            putBrightnessBody = "{\"on\": true, \"bri\": " + bright + "}";
         }
         else
         {
@@ -154,25 +154,26 @@ public class Hue : MonoBehaviour
 
     private int getDifferentBrightnessFromElectricity(float electricity)
     {
-        if (electricity < 20f)
+        int elec = (int)(electricity);
+        if (elec < 20)
         {
             //Debug.Log("Too small");
             return 0;
         }
-        else if (electricity > 440f)
+        else if (elec > 400)
         {
             //Debug.Log("Too big");
             return 254;
         }
-        else if( electricity >= 20 && electricity <= 150)
+        else if( elec >= 20 && elec <= 150)
         {
-            int output = (int)(electricity * 1.7f);
+            int output = (int)(elec * .7f);
             return output;
         }
         else
         {
             //Debug.Log("Just enough");
-            int output = (int)(electricity / 1.57f);
+            int output = (int)(elec * .57f);
 
             return output;
         }

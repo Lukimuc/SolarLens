@@ -74,7 +74,12 @@ public class electricityGenerationFormula : MonoBehaviour
             distance = (int) distance;
             angle = (int) angle;
 
-            electricityValue = Math.Abs(angle/distance) * intensity;
+            float angleDistance = angle / distance;
+            if(angleDistance <= 0)
+            {
+                angleDistance *= -1;
+            }
+            electricityValue = angleDistance * intensity;
             if(angle <= 15 || intensity <= 2)
             {
                 electricityValue = 0;
@@ -84,7 +89,7 @@ public class electricityGenerationFormula : MonoBehaviour
 
             eText.text = "Electricity: " + electricityValue;
 
-            sinText.text = "" + Mathf.Sin(angle);
+            //sinText.text = "" + Mathf.Sin(angle);
             dText.text = "" + distance;
             angleText.text = "" + angle + "°";
             sliderText.text = "Slider: " + getDifferentBrightnessFromElectricity(electricityValue).ToString();
@@ -115,25 +120,26 @@ public class electricityGenerationFormula : MonoBehaviour
 
     private int getDifferentBrightnessFromElectricity(float electricity)
     {
-        if (electricity < 20f)
+        int elec = (int)(electricity);
+        if (elec < 20)
         {
             //Debug.Log("Too small");
             return 0;
         }
-        else if (electricity > 440f)
+        else if (elec > 400)
         {
             //Debug.Log("Too big");
             return 254;
         }
-        else if (electricity >= 20 && electricity <= 150)
+        else if (elec >= 20 && elec <= 150)
         {
-            int output = (int)(electricity * 1.7f);
+            int output = (int)(elec * .7f);
             return output;
         }
         else
         {
             //Debug.Log("Just enough");
-            int output = (int)(electricity / 1.57f);
+            int output = (int)(elec * .57f);
 
             return output;
         }
