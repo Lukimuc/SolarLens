@@ -68,20 +68,26 @@ public class electricityGenerationFormula : MonoBehaviour
             angle = calculateAngle();
             distance = calculateDistance();
 
-            distance = Mathf.Floor(distance);
-            angle = Mathf.Floor(angle);
+            //distance = Mathf.Floor(distance);
+            //angle = Mathf.Floor(angle);
 
+            distance = (int) distance;
+            angle = (int) angle;
 
+            electricityValue = Math.Abs(angle/distance) * intensity;
+            if(angle <= 15 || intensity <= 2)
+            {
+                electricityValue = 0;
+            }
 
-
-            electricityValue = Mathf.Abs( intensity * Mathf.Sin(angle) / (distance));
+            //electricityValue = Mathf.Abs( intensity * Mathf.Sin(angle) / (distance));
 
             eText.text = "Electricity: " + electricityValue;
 
             sinText.text = "" + Mathf.Sin(angle);
             dText.text = "" + distance;
             angleText.text = "" + angle + "°";
-            sliderText.text = "Slider: " + getBrightnessFromElectricity(electricityValue).ToString();
+            sliderText.text = "Slider: " + getDifferentBrightnessFromElectricity(electricityValue).ToString();
         }
     }
 
@@ -102,6 +108,32 @@ public class electricityGenerationFormula : MonoBehaviour
         {
             //Debug.Log("Just enough");
             int output = (int)(electricity * 300f);
+
+            return output;
+        }
+    }
+
+    private int getDifferentBrightnessFromElectricity(float electricity)
+    {
+        if (electricity < 20f)
+        {
+            //Debug.Log("Too small");
+            return 0;
+        }
+        else if (electricity > 440f)
+        {
+            //Debug.Log("Too big");
+            return 254;
+        }
+        else if (electricity >= 20 && electricity <= 150)
+        {
+            int output = (int)(electricity * 1.7f);
+            return output;
+        }
+        else
+        {
+            //Debug.Log("Just enough");
+            int output = (int)(electricity / 1.57f);
 
             return output;
         }

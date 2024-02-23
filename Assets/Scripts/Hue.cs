@@ -82,9 +82,14 @@ public class Hue : MonoBehaviour
         //Debug.Log("Brightness: " + brighntess);
         if(brighntess <= 0)
         {
-            String bright = brighntess.ToString();
+            String bright = 0.ToString();
             putBrightnessBody = "{\"on\": false, \"bri\": " + bright + "}";
-        } else
+        } else if(brighntess >= 254)
+        {
+            String bright = 254.ToString();
+            putBrightnessBody = "{\"on\": false, \"bri\": " + bright + "}";
+        }
+        else
         {
             String bright = brighntess.ToString();
             putBrightnessBody = "{\"on\": true, \"bri\": " + bright + "}";
@@ -122,7 +127,8 @@ public class Hue : MonoBehaviour
 
     private void updateHueLight(float brighntess)
     {
-        int bri = getBrightnessFromElectricity(brighntess);
+        //int bri = getBrightnessFromElectricity(brighntess);
+        int bri = getDifferentBrightnessFromElectricity(brighntess);
         changeBrightness(bri);
     }
 
@@ -141,6 +147,32 @@ public class Hue : MonoBehaviour
         {
             //Debug.Log("Just enough");
             int output = (int) (electricity * 300f);
+
+            return output;
+        }
+    }
+
+    private int getDifferentBrightnessFromElectricity(float electricity)
+    {
+        if (electricity < 20f)
+        {
+            //Debug.Log("Too small");
+            return 0;
+        }
+        else if (electricity > 440f)
+        {
+            //Debug.Log("Too big");
+            return 254;
+        }
+        else if( electricity >= 20 && electricity <= 150)
+        {
+            int output = (int)(electricity * 1.7f);
+            return output;
+        }
+        else
+        {
+            //Debug.Log("Just enough");
+            int output = (int)(electricity / 1.57f);
 
             return output;
         }
