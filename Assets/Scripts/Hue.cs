@@ -23,6 +23,7 @@ public class Hue : MonoBehaviour
     private bool coroutineShouldRun = true;
 
 
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -90,7 +91,7 @@ public class Hue : MonoBehaviour
         }
         Debug.Log(putBrightnessBody);
         putBrightnessBody = putBrightnessBody.ToString();
-        this.brightness = brightness;
+        this.brightness = brighntess;
         await SendPutRequestAsync();
     }
 
@@ -100,7 +101,7 @@ public class Hue : MonoBehaviour
         {
             //Debug.Log("Electricity: " + electricityGenerationFormula.instance.electricityValue);
             updateHueLight(electricityGenerationFormula.instance.electricityValue);
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
         }
     }
 

@@ -34,8 +34,8 @@ public class electricityGenerationFormula : MonoBehaviour
     public TextMeshProUGUI eText;
     public TextMeshProUGUI dText;
 
-    //public TextMeshProUGUI sliderText;
-    //public TextMeshProUGUI cloudText;
+    public TextMeshProUGUI sliderText;
+    public TextMeshProUGUI sinText;
 
     public Slider brightnessSlider;
 
@@ -60,23 +60,50 @@ public class electricityGenerationFormula : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if(GUIManager.instance.inHandsOnMode)
         {
             float intensity = sliderValue;
             angle = calculateAngle();
             distance = calculateDistance();
-            
+
+            distance = Mathf.Floor(distance);
+            angle = Mathf.Floor(angle);
 
 
-            electricityValue = Mathf.Abs( intensity * ((Mathf.Sin(angle)) / (Mathf.Pow(distance, 2))));
+
+
+            electricityValue = Mathf.Abs( intensity * Mathf.Sin(angle) / (distance));
 
             eText.text = "Electricity: " + electricityValue;
-            
-            dText.text = "" + Mathf.Floor(distance);
-            angleText.text = "" + Mathf.Floor(angle) + "°";
-            //sliderText.text = "Slider: " + intensity;
+
+            sinText.text = "" + Mathf.Sin(angle);
+            dText.text = "" + distance;
+            angleText.text = "" + angle + "°";
+            sliderText.text = "Slider: " + getBrightnessFromElectricity(electricityValue).ToString();
+        }
+    }
+
+    private int getBrightnessFromElectricity(float electricity)
+    {
+        //Debug.Log("Check electricity: " + electricity);
+        if (electricity < 0.01f)
+        {
+            //Debug.Log("Too small");
+            return 0;
+        }
+        else if (electricity > 1.4f)
+        {
+            //Debug.Log("Too big");
+            return 254;
+        }
+        else
+        {
+            //Debug.Log("Just enough");
+            int output = (int)(electricity * 300f);
+
+            return output;
         }
     }
 
