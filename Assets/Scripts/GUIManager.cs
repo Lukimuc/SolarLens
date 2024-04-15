@@ -35,6 +35,7 @@ public class GUIManager : MonoBehaviour
     [SerializeField] private GameObject handsOnIntroDetailPanel1;
     [SerializeField] private GameObject handsOnIntroDetailPanel2;
     [SerializeField] private GameObject handsOnIntroDetailPanel3;
+    [SerializeField] private GameObject devModeEnterIPAdressPanel;
     [SerializeField] private GameObject handsOnVideo2;
     [SerializeField] private GameObject handsOnVideo3;
 
@@ -47,8 +48,10 @@ public class GUIManager : MonoBehaviour
     [SerializeField] private GameObject solarCellObject;
     [SerializeField] private Sprite muteSprite;
     [SerializeField] private Sprite unmuteSprite;
+    [SerializeField] private GameObject ipAddressInputField;
 
     private int guidedTourCounter = -1;
+    private int devModeClicks = 0;
     private bool inGuidedView = false;
     public bool inHandsOnMode = false;
     private bool handsOnNextButtonActivated = false;
@@ -176,6 +179,7 @@ public class GUIManager : MonoBehaviour
         solarCellAnimator.enabled = false;
         modelManager.resetNandPLayer();
         modelManager.setAllModelsInvisible();
+        devModeClicks = 0;
     }
 
     public void showHandsOnIntro()
@@ -458,6 +462,28 @@ public class GUIManager : MonoBehaviour
         }
     }
 
+    public void increaseDevModeCounter()
+    {
+        devModeClicks++;
+        if (devModeClicks == 10)
+        {
+            showDevModeEnterIPAdressPanel();
+        }
+    }
+
+    public void showDevModeEnterIPAdressPanel()
+    {
+        devModeEnterIPAdressPanel.SetActive(true);
+    }
+
+    public void hideDevModeEnterIPAdressPanel()
+    {
+        devModeEnterIPAdressPanel.SetActive(false);
+        TMP_InputField inputField = ipAddressInputField.GetComponent<TMP_InputField>();
+        //Debug.Log("IP-Adress Input: " + inputField.text);
+        Hue.instance.changeIPAdress(inputField.text);
+    }
+
     public void turnLampOnGuidedMode()
     {
         Hue.instance.changeBrightness(200);
@@ -484,6 +510,7 @@ public class GUIManager : MonoBehaviour
         handsOnIntroDetailPanel1.SetActive(false);
         handsOnIntroDetailPanel2.SetActive(false);
         handsOnIntroDetailPanel3.SetActive(false);
+        devModeEnterIPAdressPanel.SetActive(false);
     }
 
     public void disableQRCode()
